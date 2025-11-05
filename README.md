@@ -1,12 +1,28 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1>JavaScript Definitive</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h2 id="ch3-2-3">3.2.3 Arithmetic in JavaScript</h2>
+<p>This book covers the JavaScript language and the JavaScript APIs implemented by web browsers 
+and by Node. I wrote it for readers with some prior programming experience who want to learn 
+JavaScript and also for programmers who already use JavaScript but want to take their understanding 
+to a new level and really master the language. My goal with this book is to document the JavaScript 
+language comprehensively and definitively and to provide an in-depth introduction to the most 
+important client-side and server-side APIs available to JavaScript programs. As a result, this is 
+a long and detailed book. My hope, however, is that it will reward careful study and that the time 
+you spend reading it will be easily recouped in the form of higher programming productivity.
+
+<p>Previous editions of this book included a comprehensive reference section. I no longer feel that 
+it makes sense to include that material in printed form when it is so quick and easy to find 
+up-to-date reference material online. If you need to look up anything related to core or client-side 
+JavaScript, I recommend you visit the MDN website. And for server-side Node APIs, I recommend you go 
+directly to the source and consult the Node.js reference documentation.</p>
+
+<h2 id="chx-1-x">Arithmetic in JavaScript</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>JavaScript programs work with numbers using the arithmetic operators. That the language 
-provides. These include + for addition, - for subtraction, &ast; for multiplication, /
-for division, and % for modulo (remainder after division). ES2016 adds &ast;&ast; for exponentiation. 
-Full details on these and other operators can be found in Chapter 4.</p>
+
+<p>JavaScript programs work with numbers using the arithmetic operators. That the language provides. 
+These include + for addition, - for subtraction, &ast; for multiplication, / for division, and % 
+for modulo (remainder after division). ES2016 adds &ast;&ast; for exponentiation. Full details on 
+these and other operators can be found in Chapter 4.</p>
 
 <p>In addition to these basic arithmetic operators, JavaScript supports more complex mathematical 
 operations through a set of functions and constants defined as properties of the Math object:</p>
@@ -88,9 +104,7 @@ Math.asinh(x) // Hyperbolic arcsine. Also Math.acosh(), Math.atanh().
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>Working with Strings</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<pre>
-let s = "Hello, world"; // Start with some text.
-</pre>
+<pre>let s = "Hello, world"; // Start with some text.</pre>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>// Obtaining portions of a string</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
