@@ -15,10 +15,9 @@ it makes sense to include that material in printed form when it is so quick and 
 up-to-date reference material online. If you need to look up anything related to core or client-side 
 JavaScript, I recommend you visit the MDN website. And for server-side Node APIs, I recommend you go 
 directly to the source and consult the Node.js reference documentation.</p>
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2 id="chx-1-x">Arithmetic in JavaScript</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
 <p>JavaScript programs work with numbers using the arithmetic operators. That the language provides. 
 These include + for addition, - for subtraction, &ast; for multiplication, / for division, and % 
 for modulo (remainder after division). ES2016 adds &ast;&ast; for exponentiation. Full details on 
@@ -523,3 +522,290 @@ typeof operator for any JavaScript value.</p>
     <td>"object"</td>
  </tr>
 </table>
+
+<!-- chapter 1 -->
+
+Chapter 1. Introduction to JavaScript
+
+JavaScript is the programming language of the web. The overwhelming majority of websites use JavaScript, and all modern web browsers—on desktops, tablets, and phones—include JavaScript interpreters, making JavaScript the most-deployed programming language in history. Over the last decade, Node.js has enabled JavaScript programming outside of web browsers, and the dramatic success of Node means that JavaScript is now also the most-used programming language among software developers. Whether you’re starting from scratch or are already using JavaScript professionally, this book will help you master the language.
+
+If you are already familiar with other programming languages, it may help you to know that JavaScript is a high-level, dynamic, interpreted programming language that is well-suited to object-oriented and functional programming styles. JavaScript’s variables are untyped. Its syntax is loosely based on Java, but the languages are otherwise unrelated. JavaScript derives its first-class functions from Scheme and its prototype-based inheritance from the little-known language Self. But you do not need to know any of those languages, or be familiar with those terms, to use this book and learn JavaScript.
+
+The name “JavaScript” is quite misleading. Except for a superficial syntactic resemblance, JavaScript is completely different from the Java programming language. And JavaScript has long since outgrown its scripting-language roots to become a ...
+
+<!-- chapter 2 -->
+
+Chapter 2. Lexical Structure
+
+The lexical structure of a programming language is the set of elementary rules that specifies how you write programs in that language. It is the lowest-level syntax of a language: it specifies what variable names look like, the delimiter characters for comments, and how one program statement is separated from the next, for example. This short chapter documents the lexical structure of JavaScript. It covers:
+
+    Case sensitivity, spaces, and line breaks
+
+    Comments
+
+    Literals
+
+    Identifiers and reserved words
+
+    Unicode
+
+    Optional semicolons
+
+2.1 The Text of a JavaScript Program
+
+JavaScript is a case-sensitive language. This means that language keywords, variables, function names, and other identifiers must always be typed with a consistent capitalization of letters. The while keyword, for example, must be typed “while,” not “While” or “WHILE.” Similarly, online, Online, OnLine, and ONLINE are four distinct variable names.
+
+JavaScript ignores spaces that appear between tokens in programs. For the most part, JavaScript also ignores line breaks (but see §2.6 for an exception). Because you can use spaces and newlines freely in your programs, you can format and indent your programs in a neat and consistent way that makes the code easy to read and understand.
+
+In addition to the regular space character (\u0020), JavaScript also recognizes tabs, assorted ASCII control characters, and various Unicode space characters as whitespace. JavaScript recognizes newlines, ...
+<!-- chapter 3 -->
+
+Chapter 3. Types, Values, and Variables
+
+Computer programs work by manipulating values, such as the number 3.14 or the text “Hello World.” The kinds of values that can be represented and manipulated in a programming language are known as types, and one of the most fundamental characteristics of a programming language is the set of types it supports. When a program needs to retain a value for future use, it assigns the value to (or “stores” the value in) a variable. Variables have names, and they allow use of those names in our programs to refer to values. The way that variables work is another fundamental characteristic of any programming language. This chapter explains types, values, and variables in JavaScript. It begins with an overview and some definitions.
+3.1 Overview and Definitions
+
+JavaScript types can be divided into two categories: primitive types and object types. JavaScript’s primitive types include numbers, strings of text (known as strings), and Boolean truth values (known as booleans). A significant portion of this chapter is dedicated to a detailed explanation of the numeric (§3.2) and string (§3.3) types in JavaScript. Booleans are covered in §3.4.
+
+The special JavaScript values null and undefined are primitive values, but they are not numbers, strings, or booleans. Each value is typically considered to be the sole member of its own special type. §3.5 has more about null and undefined. ES6 adds a new special-purpose type, known as Symbol, that enables the definition ...
+<!-- chapter 4 -->
+
+Chapter 4. Expressions and Operators
+
+This chapter documents JavaScript expressions and the operators with which many of those expressions are built. An expression is a phrase of JavaScript that can be evaluated to produce a value. A constant embedded literally in your program is a very simple kind of expression. A variable name is also a simple expression that evaluates to whatever value has been assigned to that variable. Complex expressions are built from simpler expressions. An array access expression, for example, consists of one expression that evaluates to an array followed by an open square bracket, an expression that evaluates to an integer, and a close square bracket. This new, more complex expression evaluates to the value stored at the specified index of the specified array. Similarly, a function invocation expression consists of one expression that evaluates to a function object and zero or more additional expressions that are used as the arguments to the function.
+
+The most common way to build a complex expression out of simpler expressions is with an operator. An operator combines the values of its operands (usually two of them) in some way and evaluates to a new value. The multiplication operator * is a simple example. The expression x * y evaluates to the product of the values of the expressions x and y. For simplicity, we sometimes say that an operator returns a value rather than “evaluates to” a value.
+
+This chapter documents all of JavaScript’s operators, and ...
+<!-- chapter 5 -->
+
+Chapter 5. Statements
+
+Chapter 4 described expressions as JavaScript phrases. By that analogy, statements are JavaScript sentences or commands. Just as English sentences are terminated and separated from one another with periods, JavaScript statements are terminated with semicolons (§2.6). Expressions are evaluated to produce a value, but statements are executed to make something happen.
+
+One way to “make something happen” is to evaluate an expression that has side effects. Expressions with side effects, such as assignments and function invocations, can stand alone as statements, and when used this way are known as expression statements. A similar category of statements are the declaration statements that declare new variables and define new functions.
+
+JavaScript programs are nothing more than a sequence of statements to execute. By default, the JavaScript interpreter executes these statements one after another in the order they are written. Another way to “make something happen” is to alter this default order of execution, and JavaScript has a number of statements or control structures that do just this:
+
+Conditionals
+
+    Statements like if and switch that make the JavaScript interpreter execute or skip other statements depending on the value of an expression
+Loops
+
+    Statements like while and for that execute other statements repetitively
+Jumps
+
+    Statements like break, return, and throw that cause the interpreter to jump to another part of the program
+
+The sections that follow describe ...
+<!-- chapter 6 -->
+
+Chapter 6. Objects
+
+Objects are JavaScript’s most fundamental datatype, and you have already seen them many times in the chapters that precede this one. Because objects are so important to the JavaScript language, it is important that you understand how they work in detail, and this chapter provides that detail. It begins with a formal overview of objects, then dives into practical sections about creating objects and querying, setting, deleting, testing, and enumerating the properties of objects. These property-focused sections are followed by sections that explain how to extend, serialize, and define important methods on objects. Finally, the chapter concludes with a long section about new object literal syntax in ES6 and more recent versions of the language.
+6.1 Introduction to Objects
+
+An object is a composite value: it aggregates multiple values (primitive values or other objects) and allows you to store and retrieve those values by name. An object is an unordered collection of properties, each of which has a name and a value. Property names are usually strings (although, as we’ll see in §6.10.3, property names can also be Symbols), so we can say that objects map strings to values. This string-to-value mapping goes by various names—you are probably already familiar with the fundamental data structure under the name “hash,” “hashtable,” “dictionary,” or “associative array.” An object is more than a simple string-to-value map, however. In addition to maintaining its own set of ...
+<!-- chapter 7 -->
+
+Chapter 7. Arrays
+
+This chapter documents arrays, a fundamental datatype in JavaScript and in most other programming languages. An array is an ordered collection of values. Each value is called an element, and each element has a numeric position in the array, known as its index. JavaScript arrays are untyped: an array element may be of any type, and different elements of the same array may be of different types. Array elements may even be objects or other arrays, which allows you to create complex data structures, such as arrays of objects and arrays of arrays. JavaScript arrays are zero-based and use 32-bit indexes: the index of the first element is 0, and the highest possible index is 4294967294 (232−2), for a maximum array size of 4,294,967,295 elements. JavaScript arrays are dynamic: they grow or shrink as needed, and there is no need to declare a fixed size for the array when you create it or to reallocate it when the size changes. JavaScript arrays may be sparse: the elements need not have contiguous indexes, and there may be gaps. Every JavaScript array has a length property. For nonsparse arrays, this property specifies the number of elements in the array. For sparse arrays, length is larger than the highest index of any element.
+
+JavaScript arrays are a specialized form of JavaScript object, and array indexes are really little more than property names that happen to be integers. We’ll talk more about the specializations of arrays elsewhere in this chapter. Implementations ...
+<!-- chapter 8 -->
+
+Chapter 8. Functions
+
+This chapter covers JavaScript functions. Functions are a fundamental building block for JavaScript programs and a common feature in almost all programming languages. You may already be familiar with the concept of a function under a name such as subroutine or procedure.
+
+A function is a block of JavaScript code that is defined once but may be executed, or invoked, any number of times. JavaScript functions are parameterized: a function definition may include a list of identifiers, known as parameters, that work as local variables for the body of the function. Function invocations provide values, or arguments, for the function’s parameters. Functions often use their argument values to compute a return value that becomes the value of the function-invocation expression. In addition to the arguments, each invocation has another value—the invocation context—that is the value of the this keyword.
+
+If a function is assigned to a property of an object, it is known as a method of that object. When a function is invoked on or through an object, that object is the invocation context or this value for the function. Functions designed to initialize a newly created object are called constructors. Constructors were described in §6.2 and will be covered again in Chapter 9.
+
+In JavaScript, functions are objects, and they can be manipulated by programs. JavaScript can assign functions to variables and pass them to other functions, for example. Since functions are objects, you ...
+<!-- chapter 9 -->
+
+Chapter 9. Classes
+
+JavaScript objects were covered in Chapter 6. That chapter treated each object as a unique set of properties, different from every other object. It is often useful, however, to define a class of objects that share certain properties. Members, or instances, of the class have their own properties to hold or define their state, but they also have methods that define their behavior. These methods are defined by the class and shared by all instances. Imagine a class named Complex that represents and performs arithmetic on complex numbers, for example. A Complex instance would have properties to hold the real and imaginary parts (the state) of the complex number. And the Complex class would define methods to perform addition and multiplication (the behavior) of those numbers.
+
+In JavaScript, classes use prototype-based inheritance: if two objects inherit properties (generally function-valued properties, or methods) from the same prototype, then we say that those objects are instances of the same class. That, in a nutshell, is how JavaScript classes work. JavaScript prototypes and inheritance were covered in §6.2.3 and §6.3.2, and you will need to be familiar with the material in those sections to understand this chapter. This chapter covers prototypes in §9.1.
+
+If two objects inherit from the same prototype, this typically (but not necessarily) means that they were created and initialized by the same constructor function or factory function. Constructors have been covered ...
+<!-- chapter 10 -->
+
+Chapter 10. Modules
+
+The goal of modular programming is to allow large programs to be assembled using modules of code from disparate authors and sources and for all of that code to run correctly even in the presence of code that the various module authors did not anticipate. As a practical matter, modularity is mostly about encapsulating or hiding private implementation details and keeping the global namespace tidy so that modules cannot accidentally modify the variables, functions, and classes defined by other modules.
+
+Until recently, JavaScript had no built-in support for modules, and programmers working on large code bases did their best to use the weak modularity available through classes, objects, and closures. Closure-based modularity, with support from code-bundling tools, led to a practical form of modularity based on a require() function, which was adopted by Node. require()-based modules are a fundamental part of the Node programming environment but were never adopted as an official part of the JavaScript language. Instead, ES6 defines modules using import and export keywords. Although import and export have been part of the language for years, they were only implemented by web browsers and Node relatively recently. And, as a practical matter, JavaScript modularity still depends on code-bundling tools.
+
+The sections that follow cover:
+
+    Do-it-yourself modules with classes, objects, and closures
+
+    Node modules using require()
+
+    ES6 modules using export, import, and import() ...
+<!-- chapter 11 -->
+
+Chapter 11. The JavaScript Standard Library
+
+Some datatypes, such as numbers and strings (Chapter 3), objects (Chapter 6), and arrays (Chapter 7) are so fundamental to JavaScript that we can consider them to be part of the language itself. This chapter covers other important but less fundamental APIs that can be thought of as defining the “standard library” for JavaScript: these are useful classes and functions that are built in to JavaScript and available to all JavaScript programs in both web browsers and in Node.1
+
+The sections of this chapter are independent of one another, and you can read them in any order. They cover:
+
+    The Set and Map classes for representing sets of values and mappings from one set of values to another set of values.
+
+    Array-like objects known as TypedArrays that represent arrays of binary data, along with a related class for extracting values from non-array binary data.
+
+    Regular expressions and the RegExp class, which define textual patterns and are useful for text processing. This section also covers regular expression syntax in detail.
+
+    The Date class for representing and manipulating dates and times.
+
+    The Error class and its various subclasses, instances of which are thrown when errors occur in JavaScript programs.
+
+    The JSON object, whose methods support serialization and deserialization of JavaScript data structures composed of objects, arrays, strings, numbers, and booleans.
+
+    The Intl object and the classes it defines that can help you localize ...
+<!-- chapter 12 -->
+
+Chapter 12. Iterators and Generators
+
+Iterable objects and their associated iterators are a feature of ES6 that we’ve seen several times throughout this book. Arrays (including TypedArrays) are iterable, as are strings and Set and Map objects. This means that the contents of these data structures can be iterated—looped over—with the for/of loop, as we saw in §5.4.4:
+
+let sum = 0;
+for(let i of [1,2,3]) { // Loop once for each of these values
+    sum += i;
+}
+sum   // => 6
+
+Iterators can also be used with the ... operator to expand or “spread” an iterable object into an array initializer or function invocation, as we saw in §7.1.2:
+
+let chars = [..."abcd"]; // chars == ["a", "b", "c", "d"]
+let data = [1, 2, 3, 4, 5];
+Math.max(...data)        // => 5
+
+Iterators can be used with destructuring assignment:
+
+let purpleHaze = Uint8Array.of(255, 0, 255, 128);
+let [r, g, b, a] = purpleHaze; // a == 128
+
+When you iterate a Map object, the returned values are [key, value] pairs, which work well with destructuring assignment in a for/of loop:
+
+let m = new Map([["one", 1], ["two", 2]]);
+for(let [k,v] of m) console.log(k, v); // Logs 'one 1' and 'two 2'
+
+If you want to iterate just the keys or just the values rather than the pairs, you can use the keys() and values() methods:
+
+[...m]            // => [["one", 1], ["two", 2]]: default iteration
+[...m.entries()]  // => [["one", 1], ["two", 2]]: entries() method is the same
+[...m.keys()]     // => ["one", "two"]: keys() method iterates just map keys
+[...m.values()]   // => [1, 2]: values() ...
+<!-- chapter 13 -->
+Chapter 13. Asynchronous JavaScript
+
+Some computer programs, such as scientific simulations and machine learning models, are compute-bound: they run continuously, without pause, until they have computed their result. Most real-world computer programs, however, are significantly asynchronous. This means that they often have to stop computing while waiting for data to arrive or for some event to occur. JavaScript programs in a web browser are typically event-driven, meaning that they wait for the user to click or tap before they actually do anything. And JavaScript-based servers typically wait for client requests to arrive over the network before they do anything.
+
+This kind of asynchronous programming is commonplace in JavaScript, and this chapter documents three important language features that help make it easier to work with asynchronous code. Promises, new in ES6, are objects that represent the not-yet-available result of an asynchronous operation. The keywords async and await were introduced in ES2017 and provide new syntax that simplifies asynchronous programming by allowing you to structure your Promise-based code as if it was synchronous. Finally, asynchronous iterators and the for/await loop were introduced in ES2018 and allow you to work with streams of asynchronous events using simple loops that appear synchronous.
+
+Ironically, even though JavaScript provides these powerful features for working with asynchronous code, there are no features of the core language that are
+<!-- chapter 14 -->
+
+Chapter 14. Metaprogramming
+
+This chapter covers a number of advanced JavaScript features that are not commonly used in day-to-day programming but that may be valuable to programmers writing reusable libraries and of interest to anyone who wants to tinker with the details about how JavaScript objects behave.
+
+Many of the features described here can loosely be described as “metaprogramming”: if regular programming is writing code to manipulate data, then metaprogramming is writing code to manipulate other code. In a dynamic language like JavaScript, the lines between programming and metaprogramming are blurry—even the simple ability to iterate over the properties of an object with a for/in loop might be considered “meta” by programmers accustomed to more static languages.
+
+The metaprogramming topics covered in this chapter include:
+
+    §14.1 Controlling the enumerability, deleteability, and configurability of object properties
+
+    §14.2 Controlling the extensibility of objects, and creating “sealed” and “frozen” objects
+
+    §14.3 Querying and setting the prototypes of objects
+
+    §14.4 Fine-tuning the behavior of your types with well-known Symbols
+
+    §14.5 Creating DSLs (domain-specific languages) with template tag functions
+
+    §14.6 Probing objects with reflect methods
+
+    §14.7 Controlling object behavior with Proxy
+
+14.1 Property Attributes
+
+The properties of a JavaScript object have names and values, of course, but each property also has three associated attributes that specify how that ...
+<!-- chapter 15 -->
+
+Chapter 15. JavaScript in Web Browsers
+
+The JavaScript language was created in 1994 with the express purpose of enabling dynamic behavior in the documents displayed by web browsers. The language has evolved significantly since then, and at the same time, the scope and capabilities of the web platform have grown explosively. Today, JavaScript programmers can think of the web as a full-featured platform for application development. Web browsers specialize in the display of formatted text and images, but, like native operating systems, browsers also provide other services, including graphics, video, audio, networking, storage, and threading. JavaScript is the language that enables web applications to use the services provided by the web platform, and this chapter demonstrates how you can use the most important of these services.
+
+The chapter begins with the web platform’s programming model, explaining how scripts are embedded within HTML pages (§15.1) and how JavaScript code is triggered asynchronously by events (§15.2). The sections that follow this introductory material document the core JavaScript APIs that enable your web applications to:
+
+    Control document content (§15.3) and style (§15.4)
+
+    Determine the on-screen position of document elements (§15.5)
+
+    Create reusable user interface components (§15.6)
+
+    Draw graphics (§15.7 and §15.8)
+
+    Play and generate sounds (§15.9)
+
+    Manage browser navigation and history (§15.10)
+
+    Exchange data over the network (§15.11)
+
+    Store data on ...
+<!-- chapter 16 -->
+
+Chapter 16. Server-Side JavaScript with Node
+
+Node is JavaScript with bindings to the underlying operating system, making it possible to write JavaScript programs that read and write files, execute child processes, and communicate over the network. This makes Node useful as a:
+
+    Modern alternative to shell scripts that does not suffer from the arcane syntax of bash and other Unix shells.
+
+    General-purpose programming language for running trusted programs, not subject to the security constraints imposed by web browsers on untrusted code.
+
+    Popular environment for writing efficient and highly concurrent web servers.
+
+The defining feature of Node is its single-threaded event-based concurrency enabled by an asynchronous-by-default API. If you have programmed in other languages but have not done much JavaScript coding, or if you’re an experienced client-side JavaScript programmer used to writing code for web browers, using Node will be a bit of an adjustment, as is any new programming language or environment. This chapter begins by explaining the Node programming model, with an emphasis on concurrency, Node’s API for working with streaming data, and Node’s Buffer type for working with binary data. These initial sections are followed by sections that highlight and demonstrate some of the most important Node APIs, including those for working with files, networks, processes, and threads.
+
+One chapter is not enough to document all of Node’s APIs, but my hope is that this chapter will explain ...
+
+<!-- chapter 17 -->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2 id="ch17">Chapter 17. JavaScript Tools and Extensions</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+Congratulations on reaching the final chapter of this book. If you have read everything that comes 
+before, you now have a detailed understanding of the JavaScript language and know how to use it in 
+Node and in web browsers. This chapter is a kind of graduation present: it introduces a handful of 
+important programming tools that many JavaScript programmers find useful, and also describes two 
+widely used extensions to the core JavaScript language. Whether or not you choose to use these 
+tools and extensions for your own projects, you are almost certain to see them used in other 
+projects, so it is important to at least know what they are.
+
+The tools and language extensions covered in this chapter are:
+
+    ESLint for finding potential bugs and style problems in your code.
+
+    Prettier for formatting your JavaScript code in a standardized way.
+
+    Jest as an all-in-one solution for writing JavaScript unit tests.
+
+    npm for managing and installing the software libraries that your program depends on.
+
+    Code-bundling tools—like webpack, Rollup, and Parcel—that convert your modules of JavaScript 
+	code into a single bundle for use on the web.
+
+    Babel for translating JavaScript code that uses brand-new language features (or that uses 
+	language extensions) into JavaScript code that can run in current web browsers.
+
+    The JSX language extension (used by the React framework) that allows you to describe user 
+	interfaces using JavaScript expressions that look like ...
+	
