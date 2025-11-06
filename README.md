@@ -527,17 +527,35 @@ typeof operator for any JavaScript value.</p>
 
 Chapter 1. Introduction to JavaScript
 
-JavaScript is the programming language of the web. The overwhelming majority of websites use JavaScript, and all modern web browsers—on desktops, tablets, and phones—include JavaScript interpreters, making JavaScript the most-deployed programming language in history. Over the last decade, Node.js has enabled JavaScript programming outside of web browsers, and the dramatic success of Node means that JavaScript is now also the most-used programming language among software developers. Whether you’re starting from scratch or are already using JavaScript professionally, this book will help you master the language.
+JavaScript is the programming language of the web. The overwhelming majority of websites use 
+JavaScript, and all modern web browsers—on desktops, tablets, and phones—include JavaScript 
+interpreters, making JavaScript the most-deployed programming language in history. Over the 
+last decade, Node.js has enabled JavaScript programming outside of web browsers, and the 
+dramatic success of Node means that JavaScript is now also the most-used programming language 
+among software developers. Whether you’re starting from scratch or are already using JavaScript 
+professionally, this book will help you master the language.
 
-If you are already familiar with other programming languages, it may help you to know that JavaScript is a high-level, dynamic, interpreted programming language that is well-suited to object-oriented and functional programming styles. JavaScript’s variables are untyped. Its syntax is loosely based on Java, but the languages are otherwise unrelated. JavaScript derives its first-class functions from Scheme and its prototype-based inheritance from the little-known language Self. But you do not need to know any of those languages, or be familiar with those terms, to use this book and learn JavaScript.
+If you are already familiar with other programming languages, it may help you to know that 
+JavaScript is a high-level, dynamic, interpreted programming language that is well-suited to 
+object-oriented and functional programming styles. JavaScript’s variables are untyped. Its 
+syntax is loosely based on Java, but the languages are otherwise unrelated. JavaScript derives 
+its first-class functions from Scheme and its prototype-based inheritance from the little-known 
+language Self. But you do not need to know any of those languages, or be familiar with those terms, 
+to use this book and learn JavaScript.
 
-The name “JavaScript” is quite misleading. Except for a superficial syntactic resemblance, JavaScript is completely different from the Java programming language. And JavaScript has long since outgrown its scripting-language roots to become a ...
+The name “JavaScript” is quite misleading. Except for a superficial syntactic resemblance, JavaScript 
+is completely different from the Java programming language. And JavaScript has long since outgrown 
+its scripting-language roots to become a ...
 
 <!-- chapter 2 -->
 
 Chapter 2. Lexical Structure
 
-The lexical structure of a programming language is the set of elementary rules that specifies how you write programs in that language. It is the lowest-level syntax of a language: it specifies what variable names look like, the delimiter characters for comments, and how one program statement is separated from the next, for example. This short chapter documents the lexical structure of JavaScript. It covers:
+The lexical structure of a programming language is the set of elementary rules that specifies how 
+you write programs in that language. It is the lowest-level syntax of a language: it specifies 
+what variable names look like, the delimiter characters for comments, and how one program statement 
+is separated from the next, for example. This short chapter documents the lexical structure of 
+JavaScript. It covers:
 
     Case sensitivity, spaces, and line breaks
 
@@ -553,77 +571,162 @@ The lexical structure of a programming language is the set of elementary rules t
 
 2.1 The Text of a JavaScript Program
 
-JavaScript is a case-sensitive language. This means that language keywords, variables, function names, and other identifiers must always be typed with a consistent capitalization of letters. The while keyword, for example, must be typed “while,” not “While” or “WHILE.” Similarly, online, Online, OnLine, and ONLINE are four distinct variable names.
+JavaScript is a case-sensitive language. This means that language keywords, variables, function 
+names, and other identifiers must always be typed with a consistent capitalization of letters. 
+The while keyword, for example, must be typed “while,” not “While” or “WHILE.” Similarly, online, 
+Online, OnLine, and ONLINE are four distinct variable names.
 
-JavaScript ignores spaces that appear between tokens in programs. For the most part, JavaScript also ignores line breaks (but see §2.6 for an exception). Because you can use spaces and newlines freely in your programs, you can format and indent your programs in a neat and consistent way that makes the code easy to read and understand.
+JavaScript ignores spaces that appear between tokens in programs. For the most part, JavaScript 
+also ignores line breaks (but see §2.6 for an exception). Because you can use spaces and newlines 
+freely in your programs, you can format and indent your programs in a neat and consistent way that 
+makes the code easy to read and understand.
 
-In addition to the regular space character (\u0020), JavaScript also recognizes tabs, assorted ASCII control characters, and various Unicode space characters as whitespace. JavaScript recognizes newlines, ...
+In addition to the regular space character (\u0020), JavaScript also recognizes tabs, assorted ASCII 
+control characters, and various Unicode space characters as whitespace. JavaScript recognizes newlines, ...
 <!-- chapter 3 -->
 
 Chapter 3. Types, Values, and Variables
 
-Computer programs work by manipulating values, such as the number 3.14 or the text “Hello World.” The kinds of values that can be represented and manipulated in a programming language are known as types, and one of the most fundamental characteristics of a programming language is the set of types it supports. When a program needs to retain a value for future use, it assigns the value to (or “stores” the value in) a variable. Variables have names, and they allow use of those names in our programs to refer to values. The way that variables work is another fundamental characteristic of any programming language. This chapter explains types, values, and variables in JavaScript. It begins with an overview and some definitions.
+Computer programs work by manipulating values, such as the number 3.14 or the text “Hello World.” The 
+kinds of values that can be represented and manipulated in a programming language are known as types, 
+and one of the most fundamental characteristics of a programming language is the set of types it 
+supports. When a program needs to retain a value for future use, it assigns the value to (or “stores” 
+the value in) a variable. Variables have names, and they allow use of those names in our programs to 
+refer to values. The way that variables work is another fundamental characteristic of any programming 
+language. This chapter explains types, values, and variables in JavaScript. It begins with an overview 
+and some definitions.
 3.1 Overview and Definitions
 
-JavaScript types can be divided into two categories: primitive types and object types. JavaScript’s primitive types include numbers, strings of text (known as strings), and Boolean truth values (known as booleans). A significant portion of this chapter is dedicated to a detailed explanation of the numeric (§3.2) and string (§3.3) types in JavaScript. Booleans are covered in §3.4.
+JavaScript types can be divided into two categories: primitive types and object types. JavaScript’s 
+primitive types include numbers, strings of text (known as strings), and Boolean truth values (known 
+as booleans). A significant portion of this chapter is dedicated to a detailed explanation of the numeric 
+(§3.2) and string (§3.3) types in JavaScript. Booleans are covered in §3.4.
 
-The special JavaScript values null and undefined are primitive values, but they are not numbers, strings, or booleans. Each value is typically considered to be the sole member of its own special type. §3.5 has more about null and undefined. ES6 adds a new special-purpose type, known as Symbol, that enables the definition ...
+The special JavaScript values null and undefined are primitive values, but they are not numbers, strings, 
+or booleans. Each value is typically considered to be the sole member of its own special type. §3.5 has 
+more about null and undefined. ES6 adds a new special-purpose type, known as Symbol, that enables the 
+definition ...
 <!-- chapter 4 -->
 
 Chapter 4. Expressions and Operators
 
-This chapter documents JavaScript expressions and the operators with which many of those expressions are built. An expression is a phrase of JavaScript that can be evaluated to produce a value. A constant embedded literally in your program is a very simple kind of expression. A variable name is also a simple expression that evaluates to whatever value has been assigned to that variable. Complex expressions are built from simpler expressions. An array access expression, for example, consists of one expression that evaluates to an array followed by an open square bracket, an expression that evaluates to an integer, and a close square bracket. This new, more complex expression evaluates to the value stored at the specified index of the specified array. Similarly, a function invocation expression consists of one expression that evaluates to a function object and zero or more additional expressions that are used as the arguments to the function.
+This chapter documents JavaScript expressions and the operators with which many of those expressions 
+are built. An expression is a phrase of JavaScript that can be evaluated to produce a value. A 
+constant embedded literally in your program is a very simple kind of expression. A variable name is 
+also a simple expression that evaluates to whatever value has been assigned to that variable. Complex 
+expressions are built from simpler expressions. An array access expression, for example, consists of 
+one expression that evaluates to an array followed by an open square bracket, an expression that 
+evaluates to an integer, and a close square bracket. This new, more complex expression evaluates to 
+the value stored at the specified index of the specified array. Similarly, a function invocation 
+expression consists of one expression that evaluates to a function object and zero or more additional 
+expressions that are used as the arguments to the function.
 
-The most common way to build a complex expression out of simpler expressions is with an operator. An operator combines the values of its operands (usually two of them) in some way and evaluates to a new value. The multiplication operator * is a simple example. The expression x * y evaluates to the product of the values of the expressions x and y. For simplicity, we sometimes say that an operator returns a value rather than “evaluates to” a value.
+The most common way to build a complex expression out of simpler expressions is with an operator. An 
+operator combines the values of its operands (usually two of them) in some way and evaluates to a new 
+value. The multiplication operator * is a simple example. The expression x * y evaluates to the product 
+of the values of the expressions x and y. For simplicity, we sometimes say that an operator returns a 
+value rather than “evaluates to” a value.
 
 This chapter documents all of JavaScript’s operators, and ...
 <!-- chapter 5 -->
 
 Chapter 5. Statements
 
-Chapter 4 described expressions as JavaScript phrases. By that analogy, statements are JavaScript sentences or commands. Just as English sentences are terminated and separated from one another with periods, JavaScript statements are terminated with semicolons (§2.6). Expressions are evaluated to produce a value, but statements are executed to make something happen.
+Chapter 4 described expressions as JavaScript phrases. By that analogy, statements are JavaScript 
+sentences or commands. Just as English sentences are terminated and separated from one another with 
+periods, JavaScript statements are terminated with semicolons (§2.6). Expressions are evaluated to 
+produce a value, but statements are executed to make something happen.
 
-One way to “make something happen” is to evaluate an expression that has side effects. Expressions with side effects, such as assignments and function invocations, can stand alone as statements, and when used this way are known as expression statements. A similar category of statements are the declaration statements that declare new variables and define new functions.
+One way to “make something happen” is to evaluate an expression that has side effects. Expressions 
+with side effects, such as assignments and function invocations, can stand alone as statements, and 
+when used this way are known as expression statements. A similar category of statements are the 
+declaration statements that declare new variables and define new functions.
 
-JavaScript programs are nothing more than a sequence of statements to execute. By default, the JavaScript interpreter executes these statements one after another in the order they are written. Another way to “make something happen” is to alter this default order of execution, and JavaScript has a number of statements or control structures that do just this:
+JavaScript programs are nothing more than a sequence of statements to execute. By default, the 
+JavaScript interpreter executes these statements one after another in the order they are written. 
+Another way to “make something happen” is to alter this default order of execution, and JavaScript 
+has a number of statements or control structures that do just this:
 
 Conditionals
 
-    Statements like if and switch that make the JavaScript interpreter execute or skip other statements depending on the value of an expression
+    Statements like if and switch that make the JavaScript interpreter execute or skip other 
+	statements depending on the value of an expression
 Loops
 
     Statements like while and for that execute other statements repetitively
 Jumps
 
-    Statements like break, return, and throw that cause the interpreter to jump to another part of the program
+    Statements like break, return, and throw that cause the interpreter to jump to another part of 
+	the program
 
 The sections that follow describe ...
 <!-- chapter 6 -->
 
 Chapter 6. Objects
 
-Objects are JavaScript’s most fundamental datatype, and you have already seen them many times in the chapters that precede this one. Because objects are so important to the JavaScript language, it is important that you understand how they work in detail, and this chapter provides that detail. It begins with a formal overview of objects, then dives into practical sections about creating objects and querying, setting, deleting, testing, and enumerating the properties of objects. These property-focused sections are followed by sections that explain how to extend, serialize, and define important methods on objects. Finally, the chapter concludes with a long section about new object literal syntax in ES6 and more recent versions of the language.
+Objects are JavaScript’s most fundamental datatype, and you have already seen them many times in 
+the chapters that precede this one. Because objects are so important to the JavaScript language, 
+it is important that you understand how they work in detail, and this chapter provides that detail. 
+It begins with a formal overview of objects, then dives into practical sections about creating 
+objects and querying, setting, deleting, testing, and enumerating the properties of objects. These 
+property-focused sections are followed by sections that explain how to extend, serialize, and define 
+important methods on objects. Finally, the chapter concludes with a long section about new object 
+literal syntax in ES6 and more recent versions of the language.
 6.1 Introduction to Objects
 
-An object is a composite value: it aggregates multiple values (primitive values or other objects) and allows you to store and retrieve those values by name. An object is an unordered collection of properties, each of which has a name and a value. Property names are usually strings (although, as we’ll see in §6.10.3, property names can also be Symbols), so we can say that objects map strings to values. This string-to-value mapping goes by various names—you are probably already familiar with the fundamental data structure under the name “hash,” “hashtable,” “dictionary,” or “associative array.” An object is more than a simple string-to-value map, however. In addition to maintaining its own set of ...
+An object is a composite value: it aggregates multiple values (primitive values or other objects) 
+and allows you to store and retrieve those values by name. An object is an unordered collection of 
+properties, each of which has a name and a value. Property names are usually strings (although, as 
+we’ll see in §6.10.3, property names can also be Symbols), so we can say that objects map strings 
+to values. This string-to-value mapping goes by various names—you are probably already familiar 
+with the fundamental data structure under the name “hash,” “hashtable,” “dictionary,” or “associative 
+array.” An object is more than a simple string-to-value map, however. In addition to maintaining its 
+own set of ...
 <!-- chapter 7 -->
 
 Chapter 7. Arrays
 
-This chapter documents arrays, a fundamental datatype in JavaScript and in most other programming languages. An array is an ordered collection of values. Each value is called an element, and each element has a numeric position in the array, known as its index. JavaScript arrays are untyped: an array element may be of any type, and different elements of the same array may be of different types. Array elements may even be objects or other arrays, which allows you to create complex data structures, such as arrays of objects and arrays of arrays. JavaScript arrays are zero-based and use 32-bit indexes: the index of the first element is 0, and the highest possible index is 4294967294 (232−2), for a maximum array size of 4,294,967,295 elements. JavaScript arrays are dynamic: they grow or shrink as needed, and there is no need to declare a fixed size for the array when you create it or to reallocate it when the size changes. JavaScript arrays may be sparse: the elements need not have contiguous indexes, and there may be gaps. Every JavaScript array has a length property. For nonsparse arrays, this property specifies the number of elements in the array. For sparse arrays, length is larger than the highest index of any element.
+This chapter documents arrays, a fundamental datatype in JavaScript and in most other programming 
+languages. An array is an ordered collection of values. Each value is called an element, and each 
+element has a numeric position in the array, known as its index. JavaScript arrays are untyped: an 
+array element may be of any type, and different elements of the same array may be of different types. 
+Array elements may even be objects or other arrays, which allows you to create complex data structures, 
+such as arrays of objects and arrays of arrays. JavaScript arrays are zero-based and use 32-bit indexes: 
+the index of the first element is 0, and the highest possible index is 4294967294 (232−2), for a maximum 
+array size of 4,294,967,295 elements. JavaScript arrays are dynamic: they grow or shrink as needed, and 
+there is no need to declare a fixed size for the array when you create it or to reallocate it when the 
+size changes. JavaScript arrays may be sparse: the elements need not have contiguous indexes, and there 
+may be gaps. Every JavaScript array has a length property. For nonsparse arrays, this property specifies 
+the number of elements in the array. For sparse arrays, length is larger than the highest index of any 
+element.
 
-JavaScript arrays are a specialized form of JavaScript object, and array indexes are really little more than property names that happen to be integers. We’ll talk more about the specializations of arrays elsewhere in this chapter. Implementations ...
+JavaScript arrays are a specialized form of JavaScript object, and array indexes are really little more 
+than property names that happen to be integers. We’ll talk more about the specializations of arrays 
+elsewhere in this chapter. Implementations ...
 <!-- chapter 8 -->
 
 Chapter 8. Functions
 
-This chapter covers JavaScript functions. Functions are a fundamental building block for JavaScript programs and a common feature in almost all programming languages. You may already be familiar with the concept of a function under a name such as subroutine or procedure.
+This chapter covers JavaScript functions. Functions are a fundamental building block for JavaScript 
+programs and a common feature in almost all programming languages. You may already be familiar with 
+the concept of a function under a name such as subroutine or procedure.
 
-A function is a block of JavaScript code that is defined once but may be executed, or invoked, any number of times. JavaScript functions are parameterized: a function definition may include a list of identifiers, known as parameters, that work as local variables for the body of the function. Function invocations provide values, or arguments, for the function’s parameters. Functions often use their argument values to compute a return value that becomes the value of the function-invocation expression. In addition to the arguments, each invocation has another value—the invocation context—that is the value of the this keyword.
+A function is a block of JavaScript code that is defined once but may be executed, or invoked, any 
+number of times. JavaScript functions are parameterized: a function definition may include a list of 
+identifiers, known as parameters, that work as local variables for the body of the function. Function 
+invocations provide values, or arguments, for the function’s parameters. Functions often use their 
+argument values to compute a return value that becomes the value of the function-invocation expression. 
+In addition to the arguments, each invocation has another value—the invocation context—that is the 
+value of the this keyword.
 
-If a function is assigned to a property of an object, it is known as a method of that object. When a function is invoked on or through an object, that object is the invocation context or this value for the function. Functions designed to initialize a newly created object are called constructors. Constructors were described in §6.2 and will be covered again in Chapter 9.
+If a function is assigned to a property of an object, it is known as a method of that object. When a 
+function is invoked on or through an object, that object is the invocation context or this value for 
+the function. Functions designed to initialize a newly created object are called constructors. 
+Constructors were described in §6.2 and will be covered again in Chapter 9.
 
-In JavaScript, functions are objects, and they can be manipulated by programs. JavaScript can assign functions to variables and pass them to other functions, for example. Since functions are objects, you ...
+In JavaScript, functions are objects, and they can be manipulated by programs. JavaScript can assign 
+functions to variables and pass them to other functions, for example. Since functions are objects, 
+you ...
 <!-- chapter 9 -->
 
 Chapter 9. Classes
