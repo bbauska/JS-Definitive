@@ -1,4 +1,7 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h1>JS-Definitive-JavaScript</h1>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1>JavaScript Definitive</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>This book covers the JavaScript language and the JavaScript APIs implemented by web browsers 
@@ -524,9 +527,9 @@ typeof operator for any JavaScript value.</p>
 </table>
 
 <!-- chapter 1 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 1. Introduction to JavaScript
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 JavaScript is the programming language of the web. The overwhelming majority of websites use 
 JavaScript, and all modern web browsers—on desktops, tablets, and phones—include JavaScript 
 interpreters, making JavaScript the most-deployed programming language in history. Over the 
@@ -548,9 +551,9 @@ is completely different from the Java programming language. And JavaScript has l
 its scripting-language roots to become a ...
 
 <!-- chapter 2 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 2. Lexical Structure
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 The lexical structure of a programming language is the set of elementary rules that specifies how 
 you write programs in that language. It is the lowest-level syntax of a language: it specifies 
 what variable names look like, the delimiter characters for comments, and how one program statement 
@@ -569,8 +572,9 @@ JavaScript. It covers:
 
     Optional semicolons
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 2.1 The Text of a JavaScript Program
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 JavaScript is a case-sensitive language. This means that language keywords, variables, function 
 names, and other identifiers must always be typed with a consistent capitalization of letters. 
 The while keyword, for example, must be typed “while,” not “While” or “WHILE.” Similarly, online, 
@@ -584,9 +588,9 @@ makes the code easy to read and understand.
 In addition to the regular space character (\u0020), JavaScript also recognizes tabs, assorted ASCII 
 control characters, and various Unicode space characters as whitespace. JavaScript recognizes newlines, ...
 <!-- chapter 3 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 3. Types, Values, and Variables
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Computer programs work by manipulating values, such as the number 3.14 or the text “Hello World.” The 
 kinds of values that can be represented and manipulated in a programming language are known as types, 
 and one of the most fundamental characteristics of a programming language is the set of types it 
@@ -595,8 +599,9 @@ the value in) a variable. Variables have names, and they allow use of those name
 refer to values. The way that variables work is another fundamental characteristic of any programming 
 language. This chapter explains types, values, and variables in JavaScript. It begins with an overview 
 and some definitions.
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 3.1 Overview and Definitions
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 JavaScript types can be divided into two categories: primitive types and object types. JavaScript’s 
 primitive types include numbers, strings of text (known as strings), and Boolean truth values (known 
 as booleans). A significant portion of this chapter is dedicated to a detailed explanation of the numeric 
@@ -607,9 +612,9 @@ or booleans. Each value is typically considered to be the sole member of its own
 more about null and undefined. ES6 adds a new special-purpose type, known as Symbol, that enables the 
 definition ...
 <!-- chapter 4 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 4. Expressions and Operators
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 This chapter documents JavaScript expressions and the operators with which many of those expressions 
 are built. An expression is a phrase of JavaScript that can be evaluated to produce a value. A 
 constant embedded literally in your program is a very simple kind of expression. A variable name is 
@@ -629,9 +634,9 @@ value rather than “evaluates to” a value.
 
 This chapter documents all of JavaScript’s operators, and ...
 <!-- chapter 5 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 5. Statements
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 4 described expressions as JavaScript phrases. By that analogy, statements are JavaScript 
 sentences or commands. Just as English sentences are terminated and separated from one another with 
 periods, JavaScript statements are terminated with semicolons (§2.6). Expressions are evaluated to 
@@ -683,9 +688,9 @@ with the fundamental data structure under the name “hash,” “hashtable,” 
 array.” An object is more than a simple string-to-value map, however. In addition to maintaining its 
 own set of ...
 <!-- chapter 7 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 7. Arrays
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 This chapter documents arrays, a fundamental datatype in JavaScript and in most other programming 
 languages. An array is an ordered collection of values. Each value is called an element, and each 
 element has a numeric position in the array, known as its index. JavaScript arrays are untyped: an 
@@ -704,9 +709,9 @@ JavaScript arrays are a specialized form of JavaScript object, and array indexes
 than property names that happen to be integers. We’ll talk more about the specializations of arrays 
 elsewhere in this chapter. Implementations ...
 <!-- chapter 8 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 8. Functions
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 This chapter covers JavaScript functions. Functions are a fundamental building block for JavaScript 
 programs and a common feature in almost all programming languages. You may already be familiar with 
 the concept of a function under a name such as subroutine or procedure.
@@ -728,18 +733,18 @@ In JavaScript, functions are objects, and they can be manipulated by programs. J
 functions to variables and pass them to other functions, for example. Since functions are objects, 
 you ...
 <!-- chapter 9 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 9. Classes
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 JavaScript objects were covered in Chapter 6. That chapter treated each object as a unique set of properties, different from every other object. It is often useful, however, to define a class of objects that share certain properties. Members, or instances, of the class have their own properties to hold or define their state, but they also have methods that define their behavior. These methods are defined by the class and shared by all instances. Imagine a class named Complex that represents and performs arithmetic on complex numbers, for example. A Complex instance would have properties to hold the real and imaginary parts (the state) of the complex number. And the Complex class would define methods to perform addition and multiplication (the behavior) of those numbers.
 
 In JavaScript, classes use prototype-based inheritance: if two objects inherit properties (generally function-valued properties, or methods) from the same prototype, then we say that those objects are instances of the same class. That, in a nutshell, is how JavaScript classes work. JavaScript prototypes and inheritance were covered in §6.2.3 and §6.3.2, and you will need to be familiar with the material in those sections to understand this chapter. This chapter covers prototypes in §9.1.
 
 If two objects inherit from the same prototype, this typically (but not necessarily) means that they were created and initialized by the same constructor function or factory function. Constructors have been covered ...
 <!-- chapter 10 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 10. Modules
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 The goal of modular programming is to allow large programs to be assembled using modules of code from disparate authors and sources and for all of that code to run correctly even in the presence of code that the various module authors did not anticipate. As a practical matter, modularity is mostly about encapsulating or hiding private implementation details and keeping the global namespace tidy so that modules cannot accidentally modify the variables, functions, and classes defined by other modules.
 
 Until recently, JavaScript had no built-in support for modules, and programmers working on large code bases did their best to use the weak modularity available through classes, objects, and closures. Closure-based modularity, with support from code-bundling tools, led to a practical form of modularity based on a require() function, which was adopted by Node. require()-based modules are a fundamental part of the Node programming environment but were never adopted as an official part of the JavaScript language. Instead, ES6 defines modules using import and export keywords. Although import and export have been part of the language for years, they were only implemented by web browsers and Node relatively recently. And, as a practical matter, JavaScript modularity still depends on code-bundling tools.
@@ -752,9 +757,9 @@ The sections that follow cover:
 
     ES6 modules using export, import, and import() ...
 <!-- chapter 11 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 11. The JavaScript Standard Library
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Some datatypes, such as numbers and strings (Chapter 3), objects (Chapter 6), and arrays (Chapter 7) are so fundamental to JavaScript that we can consider them to be part of the language itself. This chapter covers other important but less fundamental APIs that can be thought of as defining the “standard library” for JavaScript: these are useful classes and functions that are built in to JavaScript and available to all JavaScript programs in both web browsers and in Node.1
 
 The sections of this chapter are independent of one another, and you can read them in any order. They cover:
@@ -773,9 +778,9 @@ The sections of this chapter are independent of one another, and you can read th
 
     The Intl object and the classes it defines that can help you localize ...
 <!-- chapter 12 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 12. Iterators and Generators
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Iterable objects and their associated iterators are a feature of ES6 that we’ve seen several times throughout this book. Arrays (including TypedArrays) are iterable, as are strings and Set and Map objects. This means that the contents of these data structures can be iterated—looped over—with the for/of loop, as we saw in §5.4.4:
 
 let sum = 0;
@@ -807,17 +812,18 @@ If you want to iterate just the keys or just the values rather than the pairs, y
 [...m.keys()]     // => ["one", "two"]: keys() method iterates just map keys
 [...m.values()]   // => [1, 2]: values() ...
 <!-- chapter 13 -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 13. Asynchronous JavaScript
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Some computer programs, such as scientific simulations and machine learning models, are compute-bound: they run continuously, without pause, until they have computed their result. Most real-world computer programs, however, are significantly asynchronous. This means that they often have to stop computing while waiting for data to arrive or for some event to occur. JavaScript programs in a web browser are typically event-driven, meaning that they wait for the user to click or tap before they actually do anything. And JavaScript-based servers typically wait for client requests to arrive over the network before they do anything.
 
 This kind of asynchronous programming is commonplace in JavaScript, and this chapter documents three important language features that help make it easier to work with asynchronous code. Promises, new in ES6, are objects that represent the not-yet-available result of an asynchronous operation. The keywords async and await were introduced in ES2017 and provide new syntax that simplifies asynchronous programming by allowing you to structure your Promise-based code as if it was synchronous. Finally, asynchronous iterators and the for/await loop were introduced in ES2018 and allow you to work with streams of asynchronous events using simple loops that appear synchronous.
 
 Ironically, even though JavaScript provides these powerful features for working with asynchronous code, there are no features of the core language that are
 <!-- chapter 14 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 14. Metaprogramming
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 This chapter covers a number of advanced JavaScript features that are not commonly used in day-to-day programming but that may be valuable to programmers writing reusable libraries and of interest to anyone who wants to tinker with the details about how JavaScript objects behave.
 
 Many of the features described here can loosely be described as “metaprogramming”: if regular programming is writing code to manipulate data, then metaprogramming is writing code to manipulate other code. In a dynamic language like JavaScript, the lines between programming and metaprogramming are blurry—even the simple ability to iterate over the properties of an object with a for/in loop might be considered “meta” by programmers accustomed to more static languages.
@@ -838,13 +844,14 @@ The metaprogramming topics covered in this chapter include:
 
     §14.7 Controlling object behavior with Proxy
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 14.1 Property Attributes
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 The properties of a JavaScript object have names and values, of course, but each property also has three associated attributes that specify how that ...
 <!-- chapter 15 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 15. JavaScript in Web Browsers
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 The JavaScript language was created in 1994 with the express purpose of enabling dynamic behavior in the documents displayed by web browsers. The language has evolved significantly since then, and at the same time, the scope and capabilities of the web platform have grown explosively. Today, JavaScript programmers can think of the web as a full-featured platform for application development. Web browsers specialize in the display of formatted text and images, but, like native operating systems, browsers also provide other services, including graphics, video, audio, networking, storage, and threading. JavaScript is the language that enables web applications to use the services provided by the web platform, and this chapter demonstrates how you can use the most important of these services.
 
 The chapter begins with the web platform’s programming model, explaining how scripts are embedded within HTML pages (§15.1) and how JavaScript code is triggered asynchronously by events (§15.2). The sections that follow this introductory material document the core JavaScript APIs that enable your web applications to:
@@ -865,9 +872,9 @@ The chapter begins with the web platform’s programming model, explaining how s
 
     Store data on ...
 <!-- chapter 16 -->
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 16. Server-Side JavaScript with Node
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Node is JavaScript with bindings to the underlying operating system, making it possible to write JavaScript programs that read and write files, execute child processes, and communicate over the network. This makes Node useful as a:
 
     Modern alternative to shell scripts that does not suffer from the arcane syntax of bash and other Unix shells.
@@ -911,4 +918,852 @@ The tools and language extensions covered in this chapter are:
 
     The JSX language extension (used by the React framework) that allows you to describe user 
 	interfaces using JavaScript expressions that look like ...
-	
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>4.13 Miscellaneous Operators</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>JavaScript supports a number of other miscellaneous operators, described in the following sections.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.1 The Conditional Operator (?:)</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The conditional operator is the only ternary operator (three operands) in JavaScript
+and is sometimes actually called the ternary operator. This operator is sometimes
+written ?:, although it does not appear quite that way in code. Because this operator
+has three operands, the first goes before the ?, the second goes between the ? and
+the :, and the third goes after the :. It is used like this:</p>
+
+<pre>x > 0 ? x : -x // The absolute value of x</pre>
+
+<p>The operands of the conditional operator may be of any type. The first operand is
+evaluated and interpreted as a boolean. If the value of the first operand is truthy, then
+the second operand is evaluated, and its value is returned. Otherwise, if the first
+operand is falsy, then the third operand is evaluated and its value is returned. Only
+one of the second and third operands is evaluated; never both.</p>
+
+<p>While you can achieve similar results using the if statement (§5.3.1), the ?: operator
+often provides a handy shortcut. Here is a typical usage, which checks to be sure that
+a variable is defined (and has a meaningful, truthy value) and uses it if so or provides
+a default value if not:</p>
+
+<pre>greeting = "hello " + (username ? username : "there");</pre>
+
+<p>This is equivalent to, but more compact than, the following if statement:</p>
+
+<pre>
+greeting = "hello ";
+if (username) {
+  greeting += username;
+} else {
+  greeting += "there";
+}
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.2 First-Defined (??)</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The first-defined operator ?? evaluates to its first defined operand: if its left operand
+is not null and not undefined, it returns that value. Otherwise, it returns the value of
+the right operand. Like the && and || operators, ?? is short-circuiting: it only evalu‐
+ates its second operand if the first operand evaluates to null or undefined. If the
+expression a has no side effects, then the expression a ?? b is equivalent to:</p>
+
+<pre>(a !== null && a !== undefined) ? a : b</pre>
+
+<p>?? is a useful alternative to || (§4.10.2) when you want to select the first defined
+operand rather than the first truthy operand. Although || is nominally a logical OR
+operator, it is also used idiomatically to select the first non-falsy operand with code
+like this:</p>
+
+<pre>
+// If maxWidth is truthy, use that. Otherwise, look for a value in
+// the preferences object. If that is not truthy, use a hardcoded constant.
+let max = maxWidth || preferences.maxWidth || 500;
+</pre>
+
+<p>The problem with this idiomatic use is that zero, the empty string, and false are all
+falsy values that may be perfectly valid in some circumstances. In this code example,
+if maxWidth is zero, that value will be ignored. But if we change the || operator to ??,
+we end up with an expression where zero is a valid value:</p>
+
+<pre>
+// If maxWidth is defined, use that. Otherwise, look for a value in
+// the preferences object. If that is not defined, use a hardcoded constant.
+let max = maxWidth ?? preferences.maxWidth ?? 500;
+</pre>
+
+<p>Here are more examples showing how ?? works when the first operand is falsy. If that operand is 
+falsy but defined, then ?? returns it. It is only when the first operand is “nullish” (i.e., null 
+or undefined) that this operator evaluates and returns the second operand:</p>
+
+<pre>
+let options = { timeout: 0, title: "", verbose: false, n: null };
+options.timeout ?? 1000 // => 0: as defined in the object
+options.title ?? "Untitled" // => "": as defined in the object
+options.verbose ?? true // => false: as defined in the object
+options.quiet ?? false // => false: property is not defined
+options.n ?? 10 // => 10: property is null
+</pre>
+
+<p>Note that the timeout, title, and verbose expressions here would have different val‐
+ues if we used || instead of ??.</p>
+
+<p>The ?? operator is similar to the && and || operators but does not have higher prece‐
+dence or lower precedence than they do. If you use it in an expression with either of
+those operators, you must use explicit parentheses to specify which operation you
+want to perform first:</p>
+
+<pre>
+(a ?? b) || c // ?? first, then ||
+a ?? (b || c) // || first, then ??
+a ?? b || c // SyntaxError: parentheses are required
+</pre>
+
+<p>The ?? operator is defined by ES2020, and as of early 2020, is newly supported by
+current or beta versions of all major browsers. This operator is formally called the
+“nullish coalescing” operator, but I avoid that term because this operator selects one
+of its operands but does not “coalesce” them in any way that I can see.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.3 The typeof Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>typeof is a unary operator that is placed before its single operand, which can be of
+any type. Its value is a string that specifies the type of the operand. Table 4-3 specifies
+the value of the typeof operator for any JavaScript value.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h4>Table 4-3. Values returned by the typeof operator</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<table>
+<table border="1">
+  <tr>
+    <th>x</th>
+    <th>typeof x</th>
+  </tr>
+  <tr>
+    <td>undefined</td>
+    <td>"undefined"</td>
+  </tr>
+  <tr>
+    <td>null</td>
+    <td>"object"</td>
+  </tr>
+  <tr>
+    <td>true or false</td>
+    <td>"boolean"</td>
+  </tr>
+  <tr>
+    <td>any number of NaN</td>
+    <td>"number"</td>
+  </tr>
+  <tr>
+    <td>any BigInt</td>
+    <td>"bigint"</td>
+  </tr>
+  <tr>
+    <td>any string</td>
+    <td>"string"</td>
+  </tr>
+   <tr>
+    <td>any symbol</td>
+    <td>"symbol"</td>
+  </tr>
+  <tr>
+    <td>any function</td>
+    <td>"function"</td>
+  </tr>
+  <tr>
+    <td>any nonfunctoin object</td>
+    <td>"object"</td>
+  </tr>
+</table>
+
+<p>You might use the typeof operator in an expression like this:</p>
+
+<pre>
+// If the value is a string, wrap it in quotes, otherwise, convert
+(typeof value === "string") ? "'" + value + "'" : value.toString()
+</pre>
+
+<p>Note that typeof returns “object” if the operand value is null. If you want to distinguish null 
+from objects, you’ll have to explicitly test for this special-case value.</p>
+<p>Although JavaScript functions are a kind of object, the typeof operator considers
+functions to be sufficiently different that they have their own return value.</p>
+
+<p>Because typeof evaluates to “object” for all object and array values other than functions, 
+it is useful only to distinguish objects from other, primitive types. In order to
+distinguish one class of object from another, you must use other techniques, such as
+the instanceof operator (see §4.9.4), the class attribute (see §14.4.3), or the con
+structor property (see §9.2.2 and §14.3).</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.4 The delete Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p><b>delete</b> is a unary operator that attempts to delete the object property or array element specified 
+as its operand. Like the assignment, increment, and decrement operators, delete is typically used 
+for its property deletion side effect and not for the value it returns. Some examples:</p>
+
+<pre>
+let o = { x: 1, y: 2}; // Start with an object
+delete o.x; // Delete one of its properties
+"x" in o // => false: the property does not exist anymore
+let a = [1,2,3]; // Start with an array
+delete a[2]; // Delete the last element of the array
+2 in a // => false: array element 2 doesn't exist anymore
+a.length // => 3: note that array length doesn't change, though
+</pre>
+
+<p>Note that a deleted property or array element is not merely set to the undefined
+value. When a property is deleted, the property ceases to exist. Attempting to read a
+nonexistent property returns undefined, but you can test for the actual existence of a
+property with the in operator (§4.9.3). Deleting an array element leaves a “hole” in
+the array and does not change the array’s length. The resulting array is sparse (§7.3).</p>
+
+<p><b>delete</b> expects its operand to be an lvalue. If it is not an lvalue, the operator takes no
+action and returns true. Otherwise, delete attempts to delete the specified lvalue.
+delete returns true if it successfully deletes the specified lvalue. Not all properties
+can be deleted, however: non-configurable properties (§14.1) are immune from
+deletion.</p>
+
+<p>In <b>strict mode</b>, <b>delete</b> raises a SyntaxError if its operand is an unqualified 
+identifier such as a variable, function, or function parameter: it only works when the operand 
+is a property access expression. Strict mode also specifies that delete raises a TypeError if 
+asked to delete any non-configurable (i.e., nondeleteable) property. Outside of strict mode, 
+no exception occurs in these cases, and delete simply returns false to indicate that the operand 
+could not be deleted.</p>
+
+<p>Here are some example uses of the delete operator:</p>
+
+<pre>
+let o = {x: 1, y: 2};
+delete o.x; // Delete one of the object properties; returns true.
+typeof o.x; // Property does not exist; returns "undefined".
+delete o.x; // Delete a nonexistent property; returns true.
+delete 1; // This makes no sense, but it just returns true.
+// Can't delete a variable; returns false, or SyntaxError in strict mode.
+delete o;
+// Undeletable property: returns false, or TypeError in strict mode.
+delete Object.prototype;
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.5 The await Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p><b>await</b> is a way to make asynchronous programming more natural in JavaScript. You will need 
+to read Chapter 13 to understand this operator. Briefly, however, await expects a Promise object 
+(representing an asynchronous computation) as its sole operand, and it makes your program behave 
+as if it were waiting for the asynchronous computation to complete (but it does this without 
+actually blocking, and it does not prevent other asynchronous operations from proceeding at the 
+same time). The value of the await operator is the fulfillment value of the Promise object. 
+Importantly, await is only legal within functions that have been declared asynchronous with the 
+async keyword. Again, see Chapter 13 for full details.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.6 The void Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p><b>void</b> is a unary operator that appears before its single operand, which may be of any
+type. This operator is unusual and infrequently used; it evaluates its operand, then
+discards the value and returns undefined. Since the operand value is discarded, using
+the void operator makes sense only if the operand has side effects.</p>
+
+<p>The <b>void</b> operator is so obscure that it is difficult to come up with a practical example
+of its use. One case would be when you want to define a function that returns nothing
+but also uses the arrow function shortcut syntax, where the body of the
+function is a single expression that is evaluated and returned. If you are evaluating the
+expression solely for its side effects and do not want to return its value, then the simplest 
+thing is to use curly braces around the function body. But, as an alternative, you
+could also use the <b>void</b> operator in this case:</p>
+
+<pre>
+let counter = 0;
+const increment = () => void counter++;
+increment() // => undefined
+counter // => 1
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>4.13.7 The comma Operator (,)</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The comma operator is a binary operator whose operands may be of any type. It evalu‐
+ates its left operand, evaluates its right operand, and then returns the value of the
+right operand. Thus, the following line:</p>
+
+<pre>i=0, j=1, k=2;</pre>
+
+<p>evaluates to 2 and is basically equivalent to:</p>
+
+<pre>i = 0; j = 1; k = 2;</pre>
+<p>The lefthand expression is always evaluated, but its value is discarded, which means
+that it only makes sense to use the comma operator when the lefthand expression has
+side effects. The only situation in which the comma operator is commonly used is
+with a for loop (§5.4.3) that has multiple loop variables:</p>
+
+<pre>
+// The first comma below is part of the syntax of the let statement
+// The second comma is the comma operator: it lets us squeeze 2
+// expressions (i++ and j--) into a statement (the for loop) that expects 1.
+for(let i=0,j=10; i < j; i++,j--) {
+  console.log(i+j);
+}
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>Chapter 5 Statements</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Chapter 4 described expressions as JavaScript phrases. By that analogy, statements are
+JavaScript sentences or commands. Just as English sentences are terminated and sepa‐
+rated from one another with periods, JavaScript statements are terminated with semi‐
+colons (§2.6). Expressions are evaluated to produce a value, but statements are
+executed to make something happen.</p>
+
+<p>One way to “make something happen” is to evaluate an expression that has side
+effects. Expressions with side effects, such as assignments and function invocations,
+can stand alone as statements, and when used this way are known as expression state‐
+ments. A similar category of statements are the declaration statements that declare
+new variables and define new functions.</p>
+
+<p>JavaScript programs are nothing more than a sequence of statements to execute. By
+default, the JavaScript interpreter executes these statements one after another in the
+order they are written. Another way to “make something happen” is to alter this
+default order of execution, and JavaScript has a number of statements or control struc‐
+tures that do just this:</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>Conditionals</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Statements like if and switch that make the JavaScript interpreter execute or skip other 
+statements depending on the value of an expression</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h4>Loops</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Statements like while and for that execute other statements repetitively</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h4>Jumps</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Statements like break, return, and throw that cause the interpreter to jump to another part of 
+the program</p>
+
+<p>The sections that follow describe the various statements in JavaScript and explain their syntax. 
+Table 5-1, at the end of the chapter, summarizes the syntax. A JavaScript program is simply a 
+sequence of statements, separated from one another with semicolons, so once you are familiar with 
+the statements of JavaScript, you can begin writing JavaScript programs.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>5.1 Expression Statements</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The simplest kinds of statements in JavaScript are expressions that have side effects. This sort 
+of statement was shown in Chapter 4. Assignment statements are one major category of expression 
+statements. For example:</p>
+
+<pre>
+greeting = "Hello " + name;
+i *= 3;
+</pre>
+
+<p>The increment and decrement operators, ++ and --, are related to assignment statements. These have 
+the side effect of changing a variable value, just as if an assignment had been performed:</p>
+
+<pre>counter++;</pre>
+
+<p>The delete operator has the important side effect of deleting an object property. Thus, it is almost 
+always used as a statement, rather than as part of a larger expression:</p>
+
+<pre>delete o.x;</pre>
+
+<p>Function calls are another major category of expression statements. For example:
+
+<pre>
+console.log(debugMessage);
+displaySpinner(); // A hypothetical function to display a spinner in a web app.
+</pre>
+
+<p>These function calls are expressions, but they have side effects that affect the host environment or 
+program state, and they are used here as statements. If a function does not have any side effects, there 
+is no sense in calling it, unless it is part of a larger expression or an assignment statement. For 
+example, you wouldn’t just compute a cosine and discard the result:</p>
+
+<pre>Math.cos(x);</pre>
+
+<p>But you might well compute the value and assign it to a variable for future use:</p>
+
+<pre>cx = Math.cos(x);</pre>
+
+<p>Note that each line of code in each of these examples is terminated with a semicolon.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>5.2 Compound and Empty Statements</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Just as the comma operator (§4.13.7) combines multiple expressions into a single expression, a statement 
+block combines multiple statements into a single compound statement. A statement block is simply a sequence 
+of statements enclosed within curly braces. Thus, the following lines act as a single statement and can be 
+used anywhere that JavaScript expects a single statement:</p>
+
+<pre>
+{
+x = Math.PI;
+cx = Math.cos(x);
+console.log("cos(π) = " + cx);
+}
+</pre>
+
+<p>There are a few things to note about this statement block. First, it does not end with a semicolon. The 
+primitive statements within the block end in semicolons, but the block itself does not. Second, the lines 
+inside the block are indented relative to the curly braces that enclose them. This is optional, but it 
+makes the code easier to read and understand.</p>
+
+<p>Just as expressions often contain subexpressions, many JavaScript statements contain substatements. 
+Formally, JavaScript syntax usually allows a single substatement. For example, the while loop syntax 
+includes a single statement that serves as the body of the loop. Using a statement block, you can place 
+any number of statements within this single allowed substatement.</p>
+
+<p>A compound statement allows you to use multiple statements where JavaScript syntax expects a single 
+statement. The empty statement is the opposite: it allows you to include no statements where one is 
+expected. The empty statement looks like this:</p>
+
+<pre>;</pre>
+
+<p>The JavaScript interpreter takes no action when it executes an empty statement. The empty statement 
+is occasionally useful when you want to create a loop that has an empty body. Consider the following 
+for loop (for loops will be covered in §5.4.3):</p>
+
+<pre>
+// Initialize an array a
+for(let i = 0; i < a.length; a[i++] = 0) ;
+</pre>
+
+<p>In this loop, all the work is done by the expression a[i++] = 0, and no loop body is necessary. 
+JavaScript syntax requires a statement as a loop body, however, so an empty statement—just a bare 
+semicolon—is used.</p>
+
+<p>Note that the accidental inclusion of a semicolon after the right parenthesis of a for loop, while 
+loop, or if statement can cause frustrating bugs that are difficult to detect. For example, the 
+following code probably does not do what the author intended:</p>
+
+<pre>
+if ((a === 0) || (b === 0)); // Oops! This line does nothing...
+o = null; // and this line is always executed.
+</pre>
+
+<p>When you intentionally use the empty statement, it is a good idea to comment your code in a way 
+that makes it clear that you are doing it on purpose. For example:</p>
+
+<pre>for(let i = 0; i < a.length; a[i++] = 0) /* empty */ ;</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>5.3 Conditionals</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Conditional statements execute or skip other statements depending on the value of a specified 
+expression. These statements are the decision points of your code, and they are also sometimes 
+known as “branches.” If you imagine a JavaScript interpreter following a path through your code, 
+the conditional statements are the places where the code branches into two or more paths and the 
+interpreter must choose which path to follow.</p>
+
+<p>The following subsections explain JavaScript’s basic conditional, the if/else statement, and 
+also cover switch, a more complicated, multiway branch statement.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>5.3.1 if</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The if statement is the fundamental control statement that allows JavaScript to make decisions, 
+or, more precisely, to execute statements conditionally. This statement has two forms. The first is:</p>
+
+<pre>
+if (expression)
+statement
+</pre>
+
+<p>In this form, expression is evaluated. If the resulting value is truthy, statement is executed. If 
+expression is falsy, statement is not executed. (See §3.4 for a definition of truthy and falsy values.) 
+For example:</p>
+
+<pre>
+if (username == null) // If username is null or undefined,
+username = "John Doe"; // define it
+</pre>
+
+<p>Or similarly:</p>
+
+<pre>
+// If username is null, undefined, false, 0, "", or NaN, give it a new value
+if (!username) username = "John Doe";
+</pre>
+
+<p>Note that the parentheses around the expression are a required part of the syntax for the if 
+statement.</p>
+
+<p>JavaScript syntax requires a single statement after the if keyword and parenthesized expression, 
+but you can use a statement block to combine multiple statements into one. So the if statement might 
+also look like this:</p>
+
+<pre>
+if (!address) {
+  address = "";
+  message = "Please specify a mailing address.";
+}
+</pre>
+
+<p>The second form of the if statement introduces an else clause that is executed when expression is 
+false. Its syntax is:</p>
+
+<pre>
+if (expression)
+  statement1
+else
+  statement2
+</pre>
+
+<p>This form of the statement executes statement1 if expression is truthy and executes statement2 if 
+expression is falsy. For example:</p>
+
+<pre>
+if (n === 1)
+  console.log("You have 1 new message.");
+else
+  console.log(`You have ${n} new messages.`);
+</pre>
+
+<p>When you have nested if statements with else clauses, some caution is required to ensure that the 
+else clause goes with the appropriate if statement. Consider the following lines:</p>
+
+<pre>
+i = j = 1;
+k = 2;
+if (i === j)
+if (j === k)
+  console.log("i equals k");
+else
+  console.log("i doesn't equal j"); // WRONG!!
+</pre>
+
+<p>In this example, the inner if statement forms the single statement allowed by the syntax of the 
+outer if statement. Unfortunately, it is not clear (except from the hint given by the indentation) 
+which if the else goes with. And in this example, the indentation is wrong, because a JavaScript 
+interpreter actually interprets the previous example as:</p>
+
+<pre>
+if (i === j) {
+  if (j === k)
+    console.log("i equals k");
+  else
+    console.log("i doesn't equal j"); // OOPS!
+}
+</pre>
+
+<p>The rule in JavaScript (as in most programming languages) is that by default an else clause is part 
+of the nearest if statement. To make this example less ambiguous and easier to read, understand, maintain, 
+and debug, you should use curly braces:</p>
+
+<pre>
+if (i === j) {
+  if (j === k) {
+    console.log("i equals k");
+  }
+} else { // What a difference the location of a curly brace makes!
+  console.log("i doesn't equal j");
+}
+</pre>
+
+<p>Many programmers make a habit of enclosing the bodies of if and else statements (as well as other 
+compound statements, such as while loops) within curly braces, even when the body consists of only a 
+single statement. Doing so consistently can prevent the sort of problem just shown, and I advise you 
+to adopt this practice. In this printed book, I place a premium on keeping example code vertically 
+compact, and I do not always follow my own advice on this matter.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>5.3.2 else if</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The if/else statement evaluates an expression and executes one of two pieces of code, depending 
+on the outcome. But what about when you need to execute one of many pieces of code? One way to do 
+this is with an else if statement. else if is not really a JavaScript statement, but simply a 
+frequently used programming idiom that results when repeated if/else statements are used:</p>
+
+<pre>
+if (n === 1) {
+  // Execute code block #1
+  } else if (n === 2) {
+  // Execute code block #2
+  } else if (n === 3) {
+  // Execute code block #3
+  } else {
+  // If all else fails, execute block #4
+}
+</pre>
+
+<p>There is nothing special about this code. It is just a series of if statements, where each following 
+if is part of the else clause of the previous statement. Using the else if idiom is preferable to, and 
+more legible than, writing these statements out in their syntactically equivalent, fully nested form:</p>
+
+<pre>
+if (n === 1) {
+  } // Execute code block #1
+else {
+  if (n === 2) {
+    // Execute code block #2
+  }
+  else {
+    if (n === 3) {
+      // Execute code block #3
+    }
+    else {
+      // If all else fails, execute block #4
+    }
+  }
+}
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>5.3.3 switch</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>An if statement causes a branch in the flow of a program’s execution, and you can use the else 
+if idiom to perform a multiway branch. This is not the best solution, however, when all of the 
+branches depend on the value of the same expression. In this case, it is wasteful to repeatedly 
+evaluate that expression in multiple if statements. The switch statement handles exactly this 
+situation. The switch keyword is followed by an expression in parentheses and a block of code in 
+curly braces:</p>
+
+<pre>
+switch(expression) {
+  statements
+}
+</pre>
+
+</p>However, the full syntax of a switch statement is more complex than this. Various locations in 
+the block of code are labeled with the case keyword followed by an expression and a colon. When a 
+switch executes, it computes the value of expression and then looks for a case label whose expression 
+evaluates to the same value (where sameness is determined by the === operator). If it finds one, it 
+starts executing the block of code at the statement labeled by the case. If it does not find a case 
+with a matching value, it looks for a statement labeled default:. If there is no default: label, 
+the switch statement skips the block of code altogether.</p>
+
+<p><b>switch</b> is a confusing statement to explain; its operation becomes much clearer with an 
+example. The following switch statement is equivalent to the repeated if/else statements shown in 
+the previous section:</p>
+
+<pre>
+switch(n) {
+  case 1: // Start here if n === 1
+    // Execute code block #1.
+    break; // Stop here
+  case 2: // Start here if n === 2
+    // Execute code block #2.
+    break; // Stop here
+  case 3: // Start here if n === 3
+    // Execute code block #3.
+    break; // Stop here
+  default: // If all else fails...
+    // Execute code block #4.
+    break; // Stop here
+}
+</pre>
+
+<p>Note the break keyword used at the end of each case in this code. The break statement, described 
+later in this chapter, causes the interpreter to jump to the end (or “break out”) of the switch 
+statement and continue with the statement that follows it. The case clauses in a switch statement 
+specify only the starting point of the desired code; they do not specify any ending point. In the 
+absence of break statements, a switch statement begins executing its block of code at the case 
+label that matches the value of its expression and continues executing statements until it reaches 
+the end of the block. On rare occasions, it is useful to write code like this that “falls through”
+from one case label to the next, but 99% of the time you should be careful to end every case with 
+a break statement. (When using switch inside a function, however, you may use a return statement 
+instead of a break statement. Both serve to terminate the switch statement and prevent execution 
+from falling through to the next case.)</p>
+
+<p>Here is a more realistic example of the switch statement; it converts a value to a string in a 
+way that depends on the type of the value:</p>
+
+<pre>
+function convert(x) {
+  switch(typeof x) {
+    case "number": // Convert the number to a hexadecimal integer
+      return x.toString(16);
+    case "string": // Return the string enclosed in quotes
+      return '"' + x + '"';
+    default: // Convert any other type in the usual way
+    return String(x);
+  }
+}
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>5.4 Loops</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>To understand conditional statements, we imagined the JavaScript interpreter following a branching 
+path through your source code. The looping statements are those that bend that path back upon itself 
+to repeat portions of your code. JavaScript has five looping statements: while, do/while, for, for/of 
+(and its for/await variant), and for/in. The following subsections explain each in turn. One common 
+use for loops is to iterate over the elements of an array. §7.6 discusses this kind of loop in detail 
+and covers special looping methods defined by the Array class.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>5.4.1 while</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Just as the if statement is JavaScript’s basic conditional, the while statement is JavaS‐
+cript’s basic loop. It has the following syntax:</p>
+
+<pre>
+while (expression)
+statement
+</pre>
+
+<p>To execute a while statement, the interpreter first evaluates expression. If the value of
+the expression is falsy, then the interpreter skips over the statement that serves as the
+loop body and moves on to the next statement in the program. If, on the other hand,
+the expression is truthy, the interpreter executes the statement and repeats, jumping
+back to the top of the loop and evaluating expression again. Another way to say this is
+that the interpreter executes statement repeatedly while the expression is truthy. Note
+that you can create an infinite loop with the syntax while(true).</p>
+
+<p>Usually, you do not want JavaScript to perform exactly the same operation over and
+over again. In almost every loop, one or more variables change with each iteration of
+the loop. Since the variables change, the actions performed by executing statement
+may differ each time through the loop. Furthermore, if the changing variable or vari‐
+ables are involved in expression, the value of the expression may be different each
+time through the loop. This is important; otherwise, an expression that starts off tru‐
+thy would never change, and the loop would never end! Here is an example of a
+while loop that prints the numbers from 0 to 9:</p>
+
+<pre>
+let count = 0;
+while(count < 10) {
+  console.log(count);
+  count++;
+}
+</pre>
+
+<p>As you can see, the variable count starts off at 0 and is incremented each time the
+body of the loop runs. Once the loop has executed 10 times, the expression becomes
+false (i.e., the variable count is no longer less than 10), the while statement finishes,
+and the interpreter can move on to the next statement in the program. Many loops
+have a counter variable like count. The variable names i, j, and k are commonly used
+as loop counters, though you should use more descriptive names if it makes your
+code easier to understand.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>5.4.2 do/while</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The <b>do/while</b> loop is like a while loop, except that the loop expression is tested at the
+bottom of the loop rather than at the top. This means that the body of the loop is
+always executed at least once. The syntax is:</p>
+
+<pre>
+do
+statement
+while (expression);
+</pre>
+
+<p>The <b>do/while</b> loop is less commonly used than its while cousin—in practice, it is
+somewhat uncommon to be certain that you want a loop to execute at least once.</p>
+
+<p>Here’s an example of a do/while loop:</p>
+
+<pre>
+function printArray(a) {
+  let len = a.length, i = 0;
+  if (len === 0) {
+    console.log("Empty Array");
+  } else {
+    do {
+      console.log(a[i]);
+    } while(++i < len);
+  }
+}
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+Table 5-1. JavaScript statement syntax
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<table>
+  <tr>
+    <th>Statement</th>
+	<th>Purpose</th>
+  </tr>
+  <tr>
+    <td>break</td>
+	<td>Exit from the innermost loop or switch or from named enclosing statement</td>
+  </tr>
+  <tr>
+    <td>case</td>
+	<td>Label a statement within a switch</td>
+  </tr>
+  <tr>
+    <td>class</td>
+	<td>Declare a class</td>
+  </tr>
+  <tr>
+    <td>const</td>
+	<td>Declare and initialize one or more constants</td>
+  </tr>
+  <tr>
+    <td>continue</td>
+	<td>Begin next iteration of the innermost loop or the named loop</td>
+  </tr>
+  <tr>
+    <td>debugger</td>
+	<td>Debugger breakpoint</td>
+  </tr>
+  <tr>
+    <td>default</td>
+	<td>Label the default statement within a switch</td>
+  </tr>
+  <tr>
+    <td>do/while</td>
+	<td>An alternative to the while loop</td>
+  </tr>
+  <tr>
+    <td>export</td>
+	<td>Declare values that can be imported into other modules</td>
+  </tr>
+  <tr>
+    <td>for</td>
+	<td>An easy-to-use loop</td>
+  </tr>
+  <tr>
+    <td>for/await</td>
+	<td>Asynchronously iterate the values of anasyn iterator</td>
+  </tr>
+  <tr>
+    <td>for/in</td>
+	<td>Enumerate the property names of an object</td>
+  </tr>
+  <tr>
+    <td>for/of</td>
+	<td>Enumerate the values of an iterable object such as an array</td>
+  </tr>
+  <tr>
+    <td>function</td>
+	<td>Declare a function</td>
+  </tr>
+  <tr>
+    <td>if/else</td>
+	<td>Execute one statement or another depending on a condition</td>
+  </tr>
+  <tr>
+    <td>import</td>
+	<td>Declare names for values defined in other modules</td>
+  </tr>
+  <tr>
+    <td>label</td>
+	<td>Give statement a name for use with break and continue</td>
+  </tr>
+  <tr>
+    <td>let</td>
+	<td>Declare and initialize one or more block-scoped variables (new syntax)</td>
+  </tr>
+  <tr>
+    <td>return</td>
+	<td>Return a value from a function</td>
+  </tr>
+  <tr>
+    <td>switch</td>
+	<td>Multiway branch to case or default: labels</td>
+  </tr>
+  <tr>
+    <td>throw</td>
+	<td>Throw an exception</td>
+  </tr>
+  <tr>
+    <td>try/catch/finally</td>
+	<td>Handle exceptions and code cleanup</td>
+  </tr>
+  <tr>
+    <td>"use strict"</td>
+	<td>Apply strict mode restrictions to script or function</td>
+  </tr>
+  <tr>
+    <td>vat</td>
+	<td>Declare and initialize one or more variable (old syntax)</td>
+  </tr>
+  <tr>
+    <td>while</td>
+	<td>A basic loop construct</td>
+  </tr>
+  <tr>
+    <td>with</td>
+	<td>Extend the scope chain (deprecated and forbidden in strict mode)</td>
+  </tr>
+  <tr>
+    <td>yield</td>
+	<td>Provide a value to be iterated; only used in generator functions</td>
+  </tr>
+</table>
+
