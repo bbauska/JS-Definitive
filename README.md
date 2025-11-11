@@ -1159,6 +1159,110 @@ text.match(pattern) // =&gt; ["1", "2", "3"]: array of all matches.
 text.replace(pattern, "#") // =&gt; "testing: #, #, #".
 text.split(/\D+/) // =&gt; ["","1","2","3"]: split on nondigits.
 </pre>
+3.4 Boolean Values
+A boolean value represents truth or falsehood, on or off, yes or no. There are only two
+possible values of this type. The reserved words true and false evaluate to these two
+values.
+Boolean values are generally the result of comparisons you make in your JavaScript
+programs. For example:
+a === 4
+
+Chapter 3: Types, Values, and Variables
+This code tests to see whether the value of the variable a is equal to the number 4. If it
+is, the result of this comparison is the boolean value true. If a is not equal to 4, the
+result of the comparison is false.
+Boolean values are commonly used in JavaScript control structures. For example, the
+if/else statement in JavaScript performs one action if a boolean value is true and
+another action if the value is false. You usually combine a comparison that creates a
+boolean value directly with a statement that uses it. The result looks like this:
+if (a === 4) {
+b = b + 1;
+} else {
+a = a + 1;
+}
+This code checks whether a equals 4. If so, it adds 1 to b; otherwise, it adds 1 to a.
+As we’ll discuss in §3.9, any JavaScript value can be converted to a boolean value. The
+following values convert to, and therefore work like, false:
+undefined
+0null
+-0
+NaN
+"" // the empty string
+All other values, including all objects (and arrays) convert to, and work like, true.
+false, and the six values that convert to it, are sometimes called falsy values, and all
+other values are called truthy. Any time JavaScript expects a boolean value, a falsy
+value works like false and a truthy value works like true.
+As an example, suppose that the variable o either holds an object or the value null.
+You can test explicitly to see if o is non-null with an if statement like this:
+if (o !== null) ...
+The not-equal operator !== compares o to null and evaluates to either true or false.
+But you can omit the comparison and instead rely on the fact that null is falsy and
+objects are truthy:
+if (o) ...
+In the first case, the body of the if will be executed only if o is not null. The second
+case is less strict: it will execute the body of the if only if o is not false or any falsy
+value (such as null or undefined). Which if statement is appropriate for your pro‐
+gram really depends on what values you expect to be assigned to o. If you need to
+distinguish null from 0 and "", then you should use an explicit comparison.
+3.4 Boolean Values
+Boolean values have a toString() method that you can use to convert them to the
+strings “true” or “false”, but they do not have any other useful methods. Despite the
+trivial API, there are three important boolean operators.
+The && operator performs the Boolean AND operation. It evaluates to a truthy value
+if and only if both of its operands are truthy; it evaluates to a falsy value otherwise.
+The || operator is the Boolean OR operation: it evaluates to a truthy value if either
+one (or both) of its operands is truthy and evaluates to a falsy value if both operands
+are falsy. Finally, the unary ! operator performs the Boolean NOT operation: it evalu‐
+ates to true if its operand is falsy and evaluates to false if its operand is truthy. For
+example:
+if ((x === 0 && y === 0) || !(z === 0)) {
+// x and y are both zero or z is non-zero
+}
+Full details on these operators are in §4.10.
+3.5 null and undefined
+null is a language keyword that evaluates to a special value that is usually used to
+indicate the absence of a value. Using the typeof operator on null returns the string
+“object”, indicating that null can be thought of as a special object value that indicates
+“no object”. In practice, however, null is typically regarded as the sole member of its
+own type, and it can be used to indicate “no value” for numbers and strings as well as
+objects. Most programming languages have an equivalent to JavaScript’s null: you
+may be familiar with it as NULL, nil, or None.
+JavaScript also has a second value that indicates absence of value. The undefined
+value represents a deeper kind of absence. It is the value of variables that have not
+been initialized and the value you get when you query the value of an object property
+or array element that does not exist. The undefined value is also the return value of
+functions that do not explicitly return a value and the value of function parameters
+for which no argument is passed. undefined is a predefined global constant (not a
+language keyword like null, though this is not an important distinction in practice)
+that is initialized to the undefined value. If you apply the typeof operator to the unde
+fined value, it returns “undefined”, indicating that this value is the sole member of a
+special type.
+Despite these differences, null and undefined both indicate an absence of value and
+can often be used interchangeably. The equality operator == considers them to be
+equal. (Use the strict equality operator === to distinguish them.) Both are falsy values:
+they behave like false when a boolean value is required. Neither null nor undefined
+have any properties or methods. In fact, using . or [] to access a property or method
+of these values causes a TypeError.
+I consider undefined to represent a system-level, unexpected, or error-like absence of
+value and null to represent a program-level, normal, or expected absence of value. I
+avoid using null and undefined when I can, but if I need to assign one of these val‐
+ues to a variable or property or pass or return one of these values to or from a func‐
+tion, I usually use null. Some programmers strive to avoid null entirely and use
+undefined in its place wherever they can.
+
+<p>The Symbol type does not have a literal syntax. To obtain a Symbol value, you call the
+Symbol() function. This function never returns the same value twice, even when
+called with the same argument. This means that if you call Symbol() to obtain a Symbol value, you can safely use that value as a property name to add a new property to
+an object and do not need to worry that you might be overwriting an existing property with the same name. Similarly, if you use symbolic property names and do not
+share those symbols, you can be confident that other modules of code in your program will not accidentally overwrite your properties.</p>
+
+In practice, Symbols serve as a language extension mechanism. When ES6 introduced
+the for/of loop (§5.4.4) and iterable objects (Chapter 12), it needed to define standard method that classes could implement to make themselves iterable. But standardizing any particular string name for this iterator method would have broken existing
+code, so a symbolic name was used instead. As we’ll see in Chapter 12, Symbol.iterator 
+is a Symbol value that can be used as a method name to make an object iterable.
+The Symbol() function takes an optional string argument and returns a unique Sym‐
+bol value. If you supply a string argument, that string will be included in the output
+
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3 id="ch3-6">3.6 Symbols</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -1177,6 +1281,182 @@ o[strname] = 1; // Define a property with a string name.
 o[symname] = 2; // Define a property with a Symbol name.
 o[strname] // =&gt; 1: access the string-named property.
 o[symname] // =&gt; 2: access the symbol-named property.
+</pre>
+
+<p>The Symbol type does not have a literal syntax. To obtain a Symbol value, you call the
+Symbol() function. This function never returns the same value twice, even when
+called with the same argument. This means that if you call Symbol() to obtain a Sym‐
+bol value, you can safely use that value as a property name to add a new property to
+an object and do not need to worry that you might be overwriting an existing prop‐
+erty with the same name. Similarly, if you use symbolic property names and do not
+share those symbols, you can be confident that other modules of code in your pro‐
+gram will not accidentally overwrite your properties.</p>
+
+<p>In practice, Symbols serve as a language extension mechanism. When ES6 introduced the for/of 
+loop (§5.4.4) and iterable objects (Chapter 12), it needed to define standard method that classes 
+could implement to make themselves iterable. But standardizing any particular string name for this 
+iterator method would have broken existing code, so a symbolic name was used instead. As we’ll see 
+in Chapter 12, Symbol.iterator is a Symbol value that can be used as a method name to make an 
+objectiterable.</p>
+
+<p>The Symbol() function takes an optional string argument and returns a unique Symbol value. If 
+you supply a string argument, that string will be included in the output of the Symbol’s toString() 
+method. Note, however, that calling Symbol() twice with the same string produces two completely 
+different Symbol values.</p>
+
+<pre>
+let s = Symbol("sym_x");
+s.toString() // => "Symbol(sym_x)"
+</pre>
+
+<p>toString() is the only interesting method of Symbol instances. There are two other
+Symbol-related functions you should know about, however. Sometimes when using
+Symbols, you want to keep them private to your own code so you have a guarantee
+that your properties will never conflict with properties used by other code. Other
+times, however, you might want to define a Symbol value and share it widely with
+other code. This would be the case, for example, if you were defining some kind of
+extension that you wanted other code to be able to participate in, as with the
+Symbol.iterator mechanism described earlier.</p>
+
+<p>To serve this latter use case, JavaScript defines a global Symbol registry. The
+Symbol.for() function takes a string argument and returns a Symbol value that is
+associated with the string you pass. If no Symbol is already associated with that string,
+then a new one is created and returned; otherwise, the already existing Symbol is
+returned. That is, the Symbol.for() function is completely different than the Sym
+bol() function: Symbol() never returns the same value twice, but Symbol.for()
+always returns the same value when called with the same string. The string passed to
+Symbol.for() appears in the output of toString() for the returned Symbol, and it
+can also be retrieved by calling Symbol.keyFor() on the returned Symbol.</p>
+
+<pre>
+let s = Symbol.for("shared");
+let t = Symbol.for("shared");
+s === t // =&gt; true
+s.toString() // =&gt; "Symbol(shared)"
+Symbol.keyFor(t) // =&gt; "shared"
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+3.7 The Global Object
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The preceding sections have explained JavaScript’s primitive types and values. Object
+types—objects, arrays, and functions—are covered in chapters of their own later in
+this book. But there is one very important object value that we must cover now. The
+global object is a regular JavaScript object that serves a very important purpose: the
+properties of this object are the globally defined identifiers that are available to a Java‐
+Script program. When the JavaScript interpreter starts (or whenever a web browser
+loads a new page), it creates a new global object and gives it an initial set of properties
+that define:</p>
+
+<ul>
+  <li>• Global constants like undefined, Infinity, and NaN</li>
+  <li>• Global functions like isNaN(), parseInt() (§3.9.2), and eval() (§4.12)</li>
+  <li>• Constructor functions like Date(), RegExp(), String(), Object(), and Array() (§3.9.2)</li>
+  <li>• Global objects like Math and JSON (§6.8)</li>
+</ul>
+
+<p>The initial properties of the global object are not reserved words, but they deserve to
+be treated as if they are. This chapter has already described some of these global prop‐
+erties. Most of the others will be covered elsewhere in this book.
+In Node, the global object has a property named global whose value is the global
+object itself, so you can always refer to the global object by the name global in Node
+programs.</p>
+
+<p>In web browsers, the Window object serves as the global object for all JavaScript code
+contained in the browser window it represents. This global Window object has a self-
+referential window property that can be used to refer to the global object. The Win‐
+dow object defines the core global properties, but it also defines quite a few other
+globals that are specific to web browsers and client-side JavaScript. Web worker
+threads (§15.13) have a different global object than the Window with which they are
+associated. Code in a worker can refer to its global object as self.</p>
+
+<p>ES2020 finally defines globalThis as the standard way to refer to the global object in
+any context. As of early 2020, this feature has been implemented by all modern
+browsers and by Node.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>3.8 Immutable Primitive Values and Mutable Object References</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>There is a fundamental difference in JavaScript between primitive values (undefined,
+null, booleans, numbers, and strings) and objects (including arrays and functions).
+Primitives are immutable: there is no way to change (or “mutate”) a primitive value.</p>
+
+<p>This is obvious for numbers and booleans—it doesn’t even make sense to change the
+value of a number. It is not so obvious for strings, however. Since strings are like
+arrays of characters, you might expect to be able to alter the character at any specified
+index. In fact, JavaScript does not allow this, and all string methods that appear to
+return a modified string are, in fact, returning a new string value. For example:</p>
+
+<pre>
+let s = "hello"; // Start with some lowercase text
+s.toUpperCase(); // Returns "HELLO", but doesn't alter s
+s // => "hello": the original string has not changed
+</pre>
+
+<p>Primitives are also compared by value: two values are the same only if they have the
+same value. This sounds circular for numbers, booleans, null, and undefined: there
+is no other way that they could be compared. Again, however, it is not so obvious for
+strings. If two distinct string values are compared, JavaScript treats them as equal if,
+and only if, they have the same length and if the character at each index is the same.
+Objects are different than primitives. First, they are mutable—their values can
+change:</p>
+
+<pre>
+let o = { x: 1 }; // Start with an object
+o.x = 2; // Mutate it by changing the value of a property
+o.y = 3; // Mutate it again by adding a new property
+let a = [1,2,3]; // Arrays are also mutable
+a[0] = 0; // Change the value of an array element
+a[3] = 4; // Add a new array element
+</pre>
+
+<p>Objects are not compared by value: two distinct objects are not equal even if they
+have the same properties and values. And two distinct arrays are not equal even if
+they have the same elements in the same order:</p>
+
+<pre>
+let o = {x: 1}, p = {x: 1}; // Two objects with the same properties
+o === p // => false: distinct objects are never equal
+let a = [], b = []; // Two distinct, empty arrays
+a === b // => false: distinct arrays are never equal
+</pre>
+
+<p>Objects are sometimes called reference types to distinguish them from JavaScript’s
+primitive types. Using this terminology, object values are references, and we say that
+objects are compared by reference: two object values are the same if and only if they
+refer to the same underlying object.</p>
+
+<pre>
+let a = []; // The variable a refers to an empty array.
+let b = a; // Now b refers to the same array.
+b[0] = 1; // Mutate the array referred to by variable b.
+a[0] // => 1: the change is also visible through variable a.
+a === b // => true: a and b refer to the same object, so they are equal.
+</pre>
+
+<p>As you can see from this code, assigning an object (or array) to a variable simply
+assigns the reference: it does not create a new copy of the object. If you want to make
+a new copy of an object or array, you must explicitly copy the properties of the object
+or the elements of the array. This example demonstrates using a for loop (§5.4.3):</p>
+
+<pre>
+let a = ["a","b","c"]; // An array we want to copy
+let b = []; // A distinct array we'll copy into
+for(let i = 0; i < a.length; i++) { // For each index of a[]
+} b[i] = a[i]; // Copy an element of a into b
+let c = Array.from(b); // In ES6, copy arrays with Array.from()
+<pre>
+
+<p>Similarly, if we want to compare two distinct objects or arrays, we must compare their
+properties or elements. This code defines a function to compare two arrays:</p>
+
+<pre>
+function equalArrays(a, b) {
+  if (a === b) return true; // Identical arrays are equal
+  if (a.length !== b.length) return false; // Different-size arrays not equal
+  for(let i = 0; i < a.length; i++) { // Loop through all elements
+    if (a[i] !== b[i]) return false; // If any differ, arrays not equal
+  }
+  return true; // Otherwise they are equal
+}
 </pre>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3 id="ch3-9">3.9 Type Conversions</h3>
