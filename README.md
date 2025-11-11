@@ -15,6 +15,7 @@ it makes sense to include that material in printed form when it is so quick and 
 up-to-date reference material online. If you need to look up anything related to core or client-side 
 JavaScript, I recommend you visit the MDN website. And for server-side Node APIs, I recommend you go 
 directly to the source and consult the Node.js reference documentation.</p>
+<!-- chapter 1 -->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>CHAPTER 1 Introduction to JavaScript</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -521,7 +522,6 @@ programs in a neat and consistent way that makes the code easy to read and under
 assorted ASCII control characters, and various Unicode space characters as white‐
 space. JavaScript recognizes newlines, carriage returns, and a carriage return/line feed
 sequence as line terminators.</p>
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>2.2 Comments</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -1459,91 +1459,6 @@ TypeError.</p>
  </tr>
 </table>
 
-<!-- chapter 1 -->
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h3>Chapter 1. Introduction to JavaScript</h3>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-JavaScript is the programming language of the web. The overwhelming majority of websites use 
-JavaScript, and all modern web browsers—on desktops, tablets, and phones—include JavaScript 
-interpreters, making JavaScript the most-deployed programming language in history. Over the 
-last decade, Node.js has enabled JavaScript programming outside of web browsers, and the 
-dramatic success of Node means that JavaScript is now also the most-used programming language 
-among software developers. Whether you’re starting from scratch or are already using JavaScript 
-professionally, this book will help you master the language.
-
-If you are already familiar with other programming languages, it may help you to know that 
-JavaScript is a high-level, dynamic, interpreted programming language that is well-suited to 
-object-oriented and functional programming styles. JavaScript’s variables are untyped. Its 
-syntax is loosely based on Java, but the languages are otherwise unrelated. JavaScript derives 
-its first-class functions from Scheme and its prototype-based inheritance from the little-known 
-language Self. But you do not need to know any of those languages, or be familiar with those terms, 
-to use this book and learn JavaScript.
-
-The name “JavaScript” is quite misleading. Except for a superficial syntactic resemblance, JavaScript 
-is completely different from the Java programming language. And JavaScript has long since outgrown 
-its scripting-language roots to become a ...
-
-<!-- chapter 2 -->
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h3>Chapter 2. Lexical Structure</h3>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-The lexical structure of a programming language is the set of elementary rules that specifies how 
-you write programs in that language. It is the lowest-level syntax of a language: it specifies 
-what variable names look like, the delimiter characters for comments, and how one program statement 
-is separated from the next, for example. This short chapter documents the lexical structure of 
-JavaScript. It covers:
-
-    Case sensitivity, spaces, and line breaks
-
-    Comments
-
-    Literals
-
-    Identifiers and reserved words
-
-    Unicode
-
-    Optional semicolons
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-2.1 The Text of a JavaScript Program
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-JavaScript is a case-sensitive language. This means that language keywords, variables, function 
-names, and other identifiers must always be typed with a consistent capitalization of letters. 
-The while keyword, for example, must be typed “while,” not “While” or “WHILE.” Similarly, online, 
-Online, OnLine, and ONLINE are four distinct variable names.
-
-JavaScript ignores spaces that appear between tokens in programs. For the most part, JavaScript 
-also ignores line breaks (but see §2.6 for an exception). Because you can use spaces and newlines 
-freely in your programs, you can format and indent your programs in a neat and consistent way that 
-makes the code easy to read and understand.
-
-In addition to the regular space character (\u0020), JavaScript also recognizes tabs, assorted ASCII 
-control characters, and various Unicode space characters as whitespace. JavaScript recognizes newlines, ...
-<!-- chapter 3 -->
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-Chapter 3. Types, Values, and Variables
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-Computer programs work by manipulating values, such as the number 3.14 or the text “Hello World.” The 
-kinds of values that can be represented and manipulated in a programming language are known as types, 
-and one of the most fundamental characteristics of a programming language is the set of types it 
-supports. When a program needs to retain a value for future use, it assigns the value to (or “stores” 
-the value in) a variable. Variables have names, and they allow use of those names in our programs to 
-refer to values. The way that variables work is another fundamental characteristic of any programming 
-language. This chapter explains types, values, and variables in JavaScript. It begins with an overview 
-and some definitions.
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-3.1 Overview and Definitions
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-JavaScript types can be divided into two categories: primitive types and object types. JavaScript’s 
-primitive types include numbers, strings of text (known as strings), and Boolean truth values (known 
-as booleans). A significant portion of this chapter is dedicated to a detailed explanation of the numeric 
-(§3.2) and string (§3.3) types in JavaScript. Booleans are covered in §3.4.
-
-The special JavaScript values null and undefined are primitive values, but they are not numbers, strings, 
-or booleans. Each value is typically considered to be the sole member of its own special type. §3.5 has 
-more about null and undefined. ES6 adds a new special-purpose type, known as Symbol, that enables the 
-definition ...
 <!-- chapter 4 -->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Chapter 4. Expressions and Operators
