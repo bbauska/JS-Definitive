@@ -489,7 +489,7 @@ don’t feel that you need to do that on your first reading. If you find yoursel
 a section, simply skip to the next. You can come back and master the details once you have a working 
 knowledge of the language as a whole.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h2>CHAPTER 2 Lexical Structure</h2>
+<h2>Chapter 2: Lexical Structure</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The lexical structure of a programming language is the set of elementary rules that specifies 
 how you write programs in that language. It is the lowest-level syntax of a language: it specifies 
@@ -650,8 +650,9 @@ curly braces was introduced in ES6 to better support Unicode codepoints that req
 <p>Unicode escapes may also appear in comments, but since comments are ignored, they
 are simply treated as ASCII characters in that context and not interpreted as Unicode.</p>
 
-<h2>2.5.2 Unicode Normalization</h2>
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>2.5.2 Unicode Normalization</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>If you use non-ASCII characters in your JavaScript programs, you must be aware that
 Unicode allows more than one way of encoding the same character. The string “é,” for
 example, can be encoded as the single Unicode character \u00E9 or as a regular
@@ -669,17 +670,8 @@ café // => 2: this indistinguishable constant has a different value
 |
 </pre>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h2>Chapter 2: Lexical Structure<h2>
+<h3>2.6 Optional Semicolons</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>The Unicode standard defines the preferred encoding for all characters and specifies a 
-normalization procedure to convert text to a canonical form suitable for comparisons. JavaScript 
-assumes that the source code it is interpreting has already been normalized and does not do any 
-normalization on its own. If you plan to use Unicode characters in your JavaScript programs, you 
-should ensure that your editor or some other tool performs Unicode normalization of your source 
-code to prevent you from ending up with different but visually indistinguishable identifiers.</p>
-
-<h2>2.6 Optional Semicolons</h2>
-
 <p>Like many programming languages, JavaScript uses the semicolon (;) to separate
 statements (see Chapter 5) from one another. This is important for making the mean‐
 ing of your code clear: without a separator, the end of one statement might appear to
@@ -711,14 +703,16 @@ treats a line break as a semicolon if the next nonspace character cannot be inte
 as a continuation of the current statement. Consider the following code:</p>
 
 <pre>
-3=alet a
+let a
+a
+=
+3
 console.log(a)
-JavaScript interprets this code like this:
-let a; a = 3; console.log(a);
-2.6 Optional Semicolons
-|
-19
 </pre>
+
+<p>JavaScript interprets this code like this:</p>
+
+<pre>let a; a = 3; console.log(a);</pre>
 
 <p>JavaScript does treat the first line break as a semicolon because it cannot parse the
 code let a a without a semicolon. The second a could stand alone as the statement
@@ -766,15 +760,16 @@ as a semicolon. For example, if you write:</p>
 <pre>
 return
 true;
-JavaScript assumes you meant:
-return; true;
-However, you probably meant:
-return true;
 </pre>
 
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h3>Chapter 2: Lexical Structure</h3>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>JavaScript assumes you meant:</p>
+
+<pre>return; true;</pre>
+
+<p>However, you probably meant:</p>
+
+<pre>return true;</pre>
+
 <p>This means that you must not insert a line break between return, break, or continue
 and the expression that follows the keyword. If you do insert a line break, your code
 is likely to fail in a nonobvious way that is difficult to debug.</p>
@@ -785,7 +780,6 @@ after an expression. If you want to use either of these operators as postfix ope
 they must appear on the same line as the expression they apply to. The third excep‐
 tion involves functions defined using concise “arrow” syntax: the => arrow itself must
 appear on the same line as the parameter list.</p>
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>2.7 Summary</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
