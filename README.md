@@ -1,8 +1,5 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h1>JS-Definitive-JavaScript</h1>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h1>JavaScript Definitive</h1>
+<h1>JS Definitive JavaScript</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>This book covers the JavaScript language and the JavaScript APIs implemented by web browsers 
 and by Node. I wrote it for readers with some prior programming experience who want to learn 
@@ -11,7 +8,7 @@ to a new level and really master the language. My goal with this book is to docu
 language comprehensively and definitively and to provide an in-depth introduction to the most 
 important client-side and server-side APIs available to JavaScript programs. As a result, this is 
 a long and detailed book. My hope, however, is that it will reward careful study and that the time 
-you spend reading it will be easily recouped in the form of higher programming productivity.
+you spend reading it will be easily recouped in the form of higher programming productivity.</p>
 
 <p>Previous editions of this book included a comprehensive reference section. I no longer feel that 
 it makes sense to include that material in printed form when it is so quick and easy to find 
@@ -19,12 +16,465 @@ up-to-date reference material online. If you need to look up anything related to
 JavaScript, I recommend you visit the MDN website. And for server-side Node APIs, I recommend you go 
 directly to the source and consult the Node.js reference documentation.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h2 id="chx-1-x">Arithmetic in JavaScript</h2>
+<h2>CHAPTER 1 Introduction to JavaScript</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>JavaScript is the programming language of the web. The overwhelming majority of
+websites use JavaScript, and all modern web browsers—on desktops, tablets, and
+phones—include JavaScript interpreters, making JavaScript the most-deployed pro‐
+gramming language in history. Over the last decade, Node.js has enabled JavaScript
+programming outside of web browsers, and the dramatic success of Node means that
+JavaScript is now also the most-used programming language among software devel‐
+opers. Whether you’re starting from scratch or are already using JavaScript professio‐
+nally, this book will help you master the language.</p>
+
+<p>If you are already familiar with other programming languages, it may help you to
+know that JavaScript is a high-level, dynamic, interpreted programming language that
+is well-suited to object-oriented and functional programming styles. JavaScript’s vari‐
+ables are untyped. Its syntax is loosely based on Java, but the languages are otherwise
+unrelated. JavaScript derives its first-class functions from Scheme and its prototype-
+based inheritance from the little-known language Self. But you do not need to know
+any of those languages, or be familiar with those terms, to use this book and learn
+JavaScript.</p>
+
+<p>The name “JavaScript” is quite misleading. Except for a superficial syntactic resem‐
+blance, JavaScript is completely different from the Java programming language. And
+JavaScript has long since outgrown its scripting-language roots to become a robust
+and efficient general-purpose language suitable for serious software engineering and
+projects with huge codebases.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>1.1 Exploring JavaScript</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>When learning a new programming language, it’s important to try the examples in
+the book, then modify them and try them again to test your understanding of the lan‐
+guage. To do that, you need a JavaScript interpreter.</p>
+
+<p>The easiest way to try out a few lines of JavaScript is to open up the web developer
+tools in your web browser (with F12, Ctrl-Shift-I, or Command-Option-I) and select
+the Console tab. You can then type code at the prompt and see the results as you type.
+Browser developer tools often appear as panes at the bottom or right of the browser
+window, but you can usually detach them as separate windows (as pictured in
+Figure 1-1), which is often quite convenient.</p>
+
+<p>Another way to try out JavaScript code is to download and install Node from https://
+nodejs.org. Once Node is installed on your system, you can simply open a Terminal
+window and type node to begin an interactive JavaScript session like this one:</p>
+
+<pre>$ node</pre>
+
+<p>Welcome to Node.js v12.13.0.<br>
+Type ".help" for more information.</p>
+
+<pre>
+&gt; .help
+.break Sometimes you get stuck, this gets you out
+.clear Alias for .break
+.editor Enter editor mode
+.exit Exit the repl
+.help Print this help message
+.load Load JS from a file into the REPL session
+.save Save all evaluated commands in this REPL session to a file
+Press ^C to abort current expression, ^D to exit the repl
+&gt; let x = 2, y = 3;
+undefined
+5> x + y
+&gt; (x === 2) && (y === 3)
+true
+&gt; (x > 3) || (y < 3)
+false
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>1.2 Hello World</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>When you are ready to start experimenting with longer chunks of code, these line-by-line 
+interactive environments may no longer be suitable, and you will probably prefer
+to write your code in a text editor. From there, you can copy and paste to the Java‐
+Script console or into a Node session. Or you can save your code to a file (the tradi‐
+tional filename extension for JavaScript code is .js) and then run that file of JavaScript
+code with Node:</p>
+
+<pre>$ node snippet.js</pre>
+
+<p>If you use Node in a noninteractive manner like this, it won’t automatically print out
+the value of all the code you run, so you’ll have to do that yourself. You can use the
+function console.log() to display text and other JavaScript values in your terminal
+window or in a browser’s developer tools console. So, for example, if you create a
+hello.js file containing this line of code:</p>
+
+<pre>console.log("Hello World!");</pre>
+
+<p>and execute the file with node hello.js, you’ll see the message “Hello World!”
+printed out.</p>
+
+<p>If you want to see that same message printed out in the JavaScript console of a web
+browser, create a new file named hello.html, and put this text in it:</p>
+
+<pre>&lt;script src="hello.js"&gt;&lt;/script&gt;</pre>
+
+<p>Then load hello.html into your web browser using a file:// URL like this one:
+file:///Users/username/javascript/hello.html</p>
+
+<p>Open the developer tools window to see the greeting in the console.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>1.3 A Tour of JavaScript</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>This section presents a quick introduction, through code examples, to the JavaScript
+language. After this introductory chapter, we dive into JavaScript at the lowest level:
+Chapter 2 explains things like JavaScript comments, semicolons, and the Unicode
+character set. Chapter 3 starts to get more interesting: it explains JavaScript variables
+and the values you can assign to those variables.</p>
+
+<p>Here’s some sample code to illustrate the highlights of those two chapters:</p>
+
+<pre>
+// Anything following double slashes is an English-language comment.
+// Read the comments carefully: they explain the JavaScript code.
+// A variable is a symbolic name for a value.
+// Variables are declared with the let keyword:
+let x; // Declare a variable named x.
+// Values can be assigned to variables with an = sign
+x = 0; // Now the variable x has the value 0
+x // => 0: A variable evaluates to its value.
+// JavaScript supports several types of values
+x = 1; // Numbers.
+x = 0.01; // Numbers can be integers or reals.
+x = "hello world"; // Strings of text in quotation marks.
+x = 'JavaScript'; // Single quote marks also delimit strings.
+x = true; // A Boolean value.
+x = false; // The other Boolean value.
+x = null; // Null is a special value that means "no value."
+x = undefined; // Undefined is another special value like null.
+</pre>
+
+<p>Two other very important types that JavaScript programs can manipulate are objects
+and arrays. These are the subjects of Chapters 6 and 7, but they are so important that
+you’ll see them many times before you reach those chapters:</p>
+
+<pre>
+// JavaScript's most important datatype is the object.
+// An object is a collection of name/value pairs, or a string to value map.
+let book = { // Objects are enclosed in curly braces.
+topic: "JavaScript", // The property "topic" has value "JavaScript."
+edition: 7 // The property "edition" has value 7
+}; // The curly brace marks the end of the object.
+// Access the properties of an object with . or []:
+book.topic // => "JavaScript"
+book["edition"] // => 7: another way to access property values.
+book.author = "Flanagan"; // Create new properties by assignment.
+book.contents = {}; // {} is an empty object with no properties.
+// Conditionally access properties with ?. (ES2020):
+book.contents?.ch01?.sect1 // => undefined: book.contents has no ch01 property.
+// JavaScript also supports arrays (numerically indexed lists) of values:
+let primes = [2, 3, 5, 7]; // An array of 4 values, delimited with [ and ].
+primes[0] // => 2: the first element (index 0) of the array.
+primes.length // => 4: how many elements in the array.
+primes[primes.length-1] // => 7: the last element of the array.
+primes[4] = 9; // Add a new element by assignment.
+primes[4] = 11; // Or alter an existing element by assignment.
+let empty = []; // [] is an empty array with no elements.
+empty.length // => 0
+// Arrays and objects can hold other arrays and objects:
+let points = [ // An array with 2 elements.
+{x: 0, y: 0}, // Each element is an object.
+{x: 1, y: 1}
+];
+let data = { // An object with 2 properties
+trial1: [[1,2], [3,4]], // The value of each property is an array.
+trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
+};
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h4>Comment Syntax in Code Examples</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>You may have noticed in the preceding code that some of the comments begin with
+an arrow (=>). These show the value produced by the code before the comment and
+are my attempt to emulate an interactive JavaScript environment like a web browser
+console in a printed book.</p>
+
+<p>Those // =&gt; comments also serve as an assertion, and I’ve written a tool that tests the
+code and verifies that it produces the value specified in the comment. This should
+help, I hope, to reduce errors in the book.</p>
+
+<p>There are two related styles of comment/assertion. If you see a comment of the
+form // a == 42, it means that after the code before the comment runs, the variable
+a will have the value 42. If you see a comment of the form // !, it means that the
+code on the line before the comment throws an exception (and the rest of the com‐
+ment after the exclamation mark usually explains what kind of exception is thrown).
+You’ll see these comments used throughout the book.
+
+<p>The syntax illustrated here for listing array elements within square braces or mapping
+object property names to property values inside curly braces is known as an initializer
+expression, and it is just one of the topics of Chapter 4. An expression is a phrase of
+JavaScript that can be evaluated to produce a value. For example, the use of . and []
+to refer to the value of an object property or array element is an expression.</p>
+<p>One of the most common ways to form expressions in JavaScript is to use operators:</p>
+
+<pre>
+// Operators act on values (the operands) to produce a new value.
+// Arithmetic operators are some of the simplest:
+3 + 2 // => 5: addition
+3 - 2 // => 1: subtraction
+3 * 2 // => 6: multiplication
+3 / 2 // => 1.5: division
+points[1].x - points[0].x // => 1: more complicated operands also work
+"3" + "2" // => "32": + adds numbers, concatenates strings
+// JavaScript defines some shorthand arithmetic operators
+let count = 0; // Define a variable
+count++; // Increment the variable
+count--; // Decrement the variable
+count += 2; // Add 2: same as count = count + 2;
+count *= 3; // Multiply by 3: same as count = count * 3;
+count // => 6: variable names are expressions, too.
+// Equality and relational operators test whether two values are equal,
+// unequal, less than, greater than, and so on. They evaluate to true or false.
+let x = 2, y = 3; // These = signs are assignment, not equality tests
+x === y // => false: equality
+x !== y // => true: inequality
+x < y // => true: less-than
+x <= y // => true: less-than or equal
+x > y // => false: greater-than
+x >= y // => false: greater-than or equal
+"two" === "three" // => false: the two strings are different
+"two" > "three" // => true: "tw" is alphabetically greater than "th"
+false === (x > y) // => true: false is equal to false
+// Logical operators combine or invert boolean values
+(x === 2) && (y === 3) // => true: both comparisons are true. && is AND
+(x > 3) || (y < 3) // => false: neither comparison is true. || is OR
+!(x === y) // => true: ! inverts a boolean value
+</pre>
+
+<p>If JavaScript expressions are like phrases, then JavaScript statements are like full sen‐
+tences. Statements are the topic of Chapter 5. Roughly, an expression is something
+that computes a value but doesn’t do anything: it doesn’t alter the program state in any
+way. Statements, on the other hand, don’t have a value, but they do alter the state.
+You’ve seen variable declarations and assignment statements above. The other broad
+category of statement is control structures, such as conditionals and loops. You’ll see
+examples below, after we cover functions.</p>
+
+<p>A function is a named and parameterized block of JavaScript code that you define
+once, and can then invoke over and over again. Functions aren’t covered formally
+until Chapter 8, but like objects and arrays, you’ll see them many times before you get
+to that chapter. Here are some simple examples:</p>
+
+<pre>
+// Functions are parameterized blocks of JavaScript code that we can invoke.
+function plus1(x) { // Define a function named "plus1" with parameter "x"
+return x + 1; // Return a value one larger than the value passed in
+} // Functions are enclosed in curly braces
+plus1(y) // => 4: y is 3, so this invocation returns 3+1
+let square = function(x) { // Functions are values and can be assigned to vars
+return x * x; // Compute the function's value
+}; // Semicolon marks the end of the assignment.
+square(plus1(y)) // => 16: invoke two functions in one expression
+</pre>
+
+<p>In ES6 and later, there is a shorthand syntax for defining functions. This concise syn‐
+tax uses => to separate the argument list from the function body, so functions defined
+this way are known as arrow functions. Arrow functions are most commonly used
+when you want to pass an unnamed function as an argument to another function.
+The preceding code looks like this when rewritten to use arrow functions:</p>
+
+<pre>
+const plus1 = x => x + 1; // The input x maps to the output x + 1
+const square = x => x * x; // The input x maps to the output x * x
+plus1(y) // => 4: function invocation is the same
+square(plus1(y)) // => 16
+</pre>
+
+<p>When we use functions with objects, we get methods:</p>
+
+<pre>
+// When functions are assigned to the properties of an object, we call
+// them "methods." All JavaScript objects (including arrays) have methods:
+let a = []; // Create an empty array
+a.push(1,2,3); // The push() method adds elements to an array
+a.reverse(); // Another method: reverse the order of elements
+// We can define our own methods, too. The "this" keyword refers to the object
+// on which the method is defined: in this case, the points array from earlier.
+points.dist = function() { // Define a method to compute distance between points
+let p1 = this[0]; // First element of array we're invoked on
+let p2 = this[1]; // Second element of the "this" object
+let a = p2.x-p1.x; // Difference in x coordinates
+let b = p2.y-p1.y; // Difference in y coordinates
+return Math.sqrt(a*a + // The Pythagorean theorem
+b*b); // Math.sqrt() computes the square root
+};
+points.dist() // => Math.sqrt(2): distance between our 2 points
+</pre>
+
+<p>Now, as promised, here are some functions whose bodies demonstrate common JavaScript 
+control structure statements:</p>
+
+<pre>
+// JavaScript statements include conditionals and loops using the syntax
+// of C, C++, Java, and other languages.
+function abs(x) { // A function to compute the absolute value.
+if (x >= 0) { // The if statement...
+return x; // executes this code if the comparison is true.
+} // This is the end of the if clause.
+else { // The optional else clause executes its code if
+return -x; // the comparison is false.
+} // Curly braces optional when 1 statement per clause.
+} // Note return statements nested inside if/else.
+abs(-10) === abs(10) // => true
+function sum(array) { // Compute the sum of the elements of an array
+let sum = 0; // Start with an initial sum of 0.
+for(let x of array) { // Loop over array, assigning each element to x.
+sum += x; // Add the element value to the sum.
+} // This is the end of the loop.
+} return sum; // Return the sum.
+sum(primes) // => 28: sum of the first 5 primes 2+3+5+7+11
+function factorial(n) { // A function to compute factorials
+let product = 1; // Start with a product of 1
+while(n > 1) { // Repeat statements in {} while expr in () is true
+product *= n; // Shortcut for product = product * n;
+n--; // Shortcut for n = n - 1
+} // End of loop
+return product; // Return the product
+factorial(4) // => 24: 1*4*3*2
+function factorial2(n) { // Another version using a different loop
+let i, product = 1; // Start with 1
+for(i=2; i <= n; i++) // Automatically increment i from 2 up to n
+product *= i; // Do this each time. {} not needed for 1-line loops
+} return product; // Return the factorial
+factorial2(5) // => 120: 1*2*3*4*5
+</pre>
+
+<p>JavaScript supports an object-oriented programming style, but it is significantly dif‐
+ferent than “classical” object-oriented programming languages. Chapter 9 covers
+object-oriented programming in JavaScript in detail, with lots of examples. Here is a
+very simple example that demonstrates how to define a JavaScript class to represent
+2D geometric points. Objects that are instances of this class have a single method,
+named distance(), that computes the distance of the point from the origin:</p>
+
+<pre>
+class Point { // By convention, class names are capitalized.
+constructor(x, y) { // Constructor function to initialize new instances.
+this.x = x; // This keyword is the new object being initialized.
+this.y = y; // Store function arguments as object properties.
+} // No return is necessary in constructor functions.
+distance() { // Method to compute distance from origin to point.
+return Math.sqrt( // Return the square root of x² + y².
+this.x * this.x + // this refers to the Point object on which
+this.y * this.y // the distance method is invoked.
+);
+}
+}
+// Use the Point() constructor function with "new" to create Point objects
+let p = new Point(1, 1); // The geometric point (1,1).
+// Now use a method of the Point object p
+p.distance() // => Math.SQRT2
+</pre>
+
+<p>This introductory tour of JavaScript’s fundamental syntax and capabilities ends here,
+but the book continues with self-contained chapters that cover additional features of
+the language:</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>1.4 Example: Character Frequency Histograms</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>This chapter concludes with a short but nontrivial JavaScript program. Example 1-1 is
+a Node program that reads text from standard input, computes a character frequency
+histogram from that text, and then prints out the histogram. You could invoke the
+program like this to analyze the character frequency of its own source code:</p>
+
+<pre>
+$ node charfreq.js < charfreq.js
+T: ########### 11.22%
+E: ########## 10.15%
+R: ####### 6.68%
+S: ###### 6.44%
+A: ###### 6.16%
+N: ###### 5.81%
+O: ##### 5.45%
+I: ##### 4.54%
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>CHAPTER 2 Lexical Structure</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2>CHAPTER 3 Types, Values, and Variables</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>3.2 Numbers</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>JavaScript’s primary numeric type, Number, is used to represent integers and to
+approximate real numbers. JavaScript represents numbers using the 64-bit floating-
+point format defined by the IEEE 754 standard,1 which means it can represent num‐
+bers as large as ±1.7976931348623157 × 10308 and as small as ±5 × 10−324.</p>
+
+<p>The JavaScript number format allows you to exactly represent all integers between
+−9,007,199,254,740,992 (−253) and 9,007,199,254,740,992 (253), inclusive. If you use
+integer values larger than this, you may lose precision in the trailing digits. Note,
+however, that certain operations in JavaScript (such as array indexing and the bitwise
+operators described in Chapter 4) are performed with 32-bit integers.</p>
+
+<p>When a number appears directly in a JavaScript program, it’s called a numeric literal.
+JavaScript supports numeric literals in several formats, as described in the following
+sections. Note that any numeric literal can be preceded by a minus sign (-) to make
+the number negative.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>3.2.1 Integer Literals</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>In a JavaScript program, a base-10 integer is written as a sequence of digits. For example:</p>
+
+<pre>
+30
+10000000
+</pre>
+
+<p>In addition to base-10 integer literals, JavaScript recognizes hexadecimal (base-16)
+values. A hexadecimal literal begins with 0x or 0X, followed by a string of hexadeci‐
+mal digits. A hexadecimal digit is one of the digits 0 through 9 or the letters a (or A)
+through f (or F), which represent values 10 through 15. Here are examples of hexa‐
+decimal integer literals:</p>
+
+<pre>
+0xff // => 255: (15*16 + 15)
+0xBADCAFE // => 195939070
+In ES6 and later, you can also express integers in binary (base 2) or octal (base 8)
+using the prefixes 0b and 0o (or 0B and 0O) instead of 0x:
+0b10101 // => 21: (1*16 + 0*8 + 1*4 + 0*2 + 1*1)
+0o377 // => 255: (3*64 + 7*8 + 7*1)
+</pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3>3.2.2 Floating-Point Literals</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Floating-point literals can have a decimal point; they use the traditional syntax for
+real numbers. A real value is represented as the integral part of the number, followed
+by a decimal point and the fractional part of the number.</p>
+
+<p>Floating-point literals may also be represented using exponential notation: a real
+number followed by the letter e (or E), followed by an optional plus or minus sign,
+followed by an integer exponent. This notation represents the real number multiplied
+by 10 to the power of the exponent. More succinctly, the syntax is:</p>
+
+<pre>[digits][.digits][(E|e)[(+|-)]digits]</pre>
+
+<p>For example:</p>
+
+<pre>
+3.14
+2345.6789
+.333333333333333333
+6.02e23 // 6.02 × 10²³
+1.4738223E-32 // 1.4738223 × 10⁻³²
+Separators in Numeric Literals
+You can use underscores within numeric literals to break long literals up into chunks
+that are easier to read:
+let billion = 1_000_000_000; // Underscore as a thousands separator.
+let bytes = 0x89_AB_CD_EF; // As a bytes separator.
+let bits = 0b0001_1101_0111; // As a nibble separator.
+let fraction = 0.123_456_789; // Works in the fractional part, too.
+</pre>
+
+<p>At the time of this writing in early 2020, underscores in numeric literals are not yet
+formally standardized as part of JavaScript. But they are in the advanced stages of the
+standardization process and are implemented by all major browsers and by Node.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h3 id="ch3-2-3">3.2.3 Arithmetic in JavaScript</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>JavaScript programs work with numbers using the arithmetic operators. That the language provides. 
 These include + for addition, - for subtraction, &ast; for multiplication, / for division, and % 
-for modulo (remainder after division). ES2016 adds &ast;&ast; for exponentiation. Full details on 
-these and other operators can be found in Chapter 4.</p>
+for modulo (remainder after division). ES2016 adds &ast;&ast; for exponentiation.</p>
 
 <p>In addition to these basic arithmetic operators, JavaScript supports more complex mathematical 
 operations through a set of functions and constants defined as properties of the Math object:</p>
