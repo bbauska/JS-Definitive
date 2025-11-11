@@ -491,9 +491,402 @@ knowledge of the language as a whole.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>CHAPTER 2 Lexical Structure</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>The lexical structure of a programming language is the set of elementary rules that specifies 
+how you write programs in that language. It is the lowest-level syntax of a language: it specifies 
+what variable names look like, the delimiter characters for comments, and how one program statement 
+is separated from the next, for example. This short chapter documents the lexical structure of 
+JavaScript. It covers: • Case sensitivity, spaces, and line breaks.</p>
+<ul>
+  <li>• Comments</li>
+  <li>• Literals</li>
+  <li>• Identifiers and reserved words</li>
+  <li>• Unicode</li>
+  <li>• Optional semicolons</li>
+</ul>
+
+2.1 The Text of a JavaScript Program
+
+<p>JavaScript is a case-sensitive language. This means that language keywords, variables,
+function names, and other identifiers must always be typed with a consistent capitalization 
+of letters. The while keyword, for example, must be typed “while,” not “While”
+or “WHILE.” Similarly, online, Online, OnLine, and ONLINE are four distinct variable
+names.</p>
+
+<p>JavaScript ignores spaces that appear between tokens in programs. For the most part,
+JavaScript also ignores line breaks (but see §2.6 for an exception). Because you can
+use spaces and newlines freely in your programs, you can format and indent your
+programs in a neat and consistent way that makes the code easy to read and
+understand.</p>
+15
+<p>In addition to the regular space character (\u0020), JavaScript also recognizes tabs,
+assorted ASCII control characters, and various Unicode space characters as white‐
+space. JavaScript recognizes newlines, carriage returns, and a carriage return/line feed
+sequence as line terminators.</p>
+
+2.2 Comments
+
+<p>JavaScript supports two styles of comments. Any text between a // and the end of a
+line is treated as a comment and is ignored by JavaScript. Any text between the characters 
+/* and */ is also treated as a comment; these comments may span multiple
+lines but may not be nested. The following lines of code are all legal JavaScript
+comments:</p>
+
+<pre>
+// This is a single-line comment.
+/* This is also a comment */ // and here is another comment.
+/*
+* This is a multi-line comment. The extra * characters at the start of
+* each line are not a required part of the syntax; they just look cool!
+*/
+</pre>
+
+2.3 Literals
+
+<p>A literal is a data value that appears directly in a program. The following are all literals:</p>
+
+<pre>
+12 // The number twelve
+1.2 // The number one point two
+"hello world" // A string of text
+'Hi' // Another string
+true // A Boolean value
+false // The other Boolean value
+null // Absence of an object
+</pre>
+<p>Complete details on numeric and string literals appear in Chapter 3.</p>
+
+2.4 Identifiers and Reserved Words
+
+<p>An identifier is simply a name. In JavaScript, identifiers are used to name constants,
+variables, properties, functions, and classes and to provide labels for certain loops in
+JavaScript code. A JavaScript identifier must begin with a letter, an underscore (_), or
+a dollar sign ($). Subsequent characters can be letters, digits, underscores, or dollar
+signs. (Digits are not allowed as the first character so that JavaScript can easily distin‐
+guish identifiers from numbers.) These are all legal identifiers:</p>
+
+Chapter 2: Lexical Structure
+<pre>
+i
+my_variable_name
+v13
+_dummy
+$str
+</pre>
+<p>Like any language, JavaScript reserves certain identifiers for use by the language itself.
+These “reserved words” cannot be used as regular identifiers. They are listed in the
+next section.</p>
+
+2.4.1 Reserved Words
+
+<p>The following words are part of the JavaScript language. Many of these (such as if,
+while, and for) are reserved keywords that must not be used as the names of constants, 
+variables, functions, or classes (though they can all be used as the names of
+properties within an object). Others (such as from, of, get, and set) are used in limited 
+contexts with no syntactic ambiguity and are perfectly legal as identifiers. Still
+other keywords (such as let) can’t be fully reserved in order to retain backward compatibility 
+with older programs, and so there are complex rules that govern when they
+can be used as identifiers and when they cannot. (let can be used as a variable name
+if declared with var outside of a class, for example, but not if declared inside a class or
+with const.) The simplest course is to avoid using any of these words as identifiers,
+except for from, set, and target, which are safe to use and are already in common
+use.</p>
+
+<pre>
+as const export get null target void
+async continue extends if of this while
+await debugger false import return throw with
+break default finally in set true yield
+case delete for instanceof static try
+catch do from let super typeof
+class else function new switch var
+</pre>
+
+<p>JavaScript also reserves or restricts the use of certain keywords that are not currently
+used by the language but that might be used in future versions:
+enum implements interface package private protected public
+For historical reasons, arguments and eval are not allowed as identifiers in certain
+circumstances and are best avoided entirely.
+
+<h2>2.5 Unicode</h2>
+<p>JavaScript programs are written using the Unicode character set, and you can use any
+Unicode characters in strings and comments. For portability and ease of editing, it is
+common to use only ASCII letters and digits in identifiers. But this is a programming
+convention only, and the language allows Unicode letters, digits, and ideographs (but
+not emojis) in identifiers. This means that programmers can use mathematical symbols 
+and words from non-English languages as constants and variables:</p>
+
+<pre>
+const π = 3.14;
+const sí = true;
+</pre>
+
+<h3>2.5.1 Unicode Escape Sequences</h3>
+<p>Some computer hardware and software cannot display, input, or correctly process the
+full set of Unicode characters. To support programmers and systems using older tech‐
+nology, JavaScript defines escape sequences that allow us to write Unicode characters
+using only ASCII characters. These Unicode escapes begin with the characters \u and
+are either followed by exactly four hexadecimal digits (using uppercase or lowercase
+letters A–F) or by one to six hexadecimal digits enclosed within curly braces. These
+Unicode escapes may appear in JavaScript string literals, regular expression literals,
+and identifiers (but not in language keywords). The Unicode escape for the character
+“é,” for example, is \u00E9; here are three different ways to write a variable name that
+includes this character:</p>
+
+<pre>
+let café = 1; // Define a variable using a Unicode character
+caf\u00e9 // => 1; access the variable using an escape sequence
+caf\u{E9} // => 1; another form of the same escape sequence
+</pre>
+
+<p>Early versions of JavaScript only supported the four-digit escape sequence. The ver‐
+sion with curly braces was introduced in ES6 to better support Unicode codepoints
+that require more than 16 bits, such as emoji:</p>
+<pre>
+console.log("\u{1F600}"); // Prints a smiley face emoji
+</pre>
+
+<p>Unicode escapes may also appear in comments, but since comments are ignored, they
+are simply treated as ASCII characters in that context and not interpreted as Unicode.</p>
+
+<h2>2.5.2 Unicode Normalization</h2>
+
+<p>If you use non-ASCII characters in your JavaScript programs, you must be aware that
+Unicode allows more than one way of encoding the same character. The string “é,” for
+example, can be encoded as the single Unicode character \u00E9 or as a regular
+ASCII “e” followed by the acute accent combining mark \u0301. These two encodings
+typically look exactly the same when displayed by a text editor, but they have different
+binary encodings, meaning that they are considered different by JavaScript, which
+can lead to very confusing programs:</p>
+
+<pre>
+const café = 1; // This constant is named "caf\u{e9}"
+const café = 2; // This constant is different: "cafe\u{301}"
+café // => 1: this constant has one value
+café // => 2: this indistinguishable constant has a different value
+18
+|
+</pre>
+
+<h2>Chapter 2: Lexical Structure<h2>
+
+<p>The Unicode standard defines the preferred encoding for all characters and specifies
+a normalization procedure to convert text to a canonical form suitable for compari‐
+sons. JavaScript assumes that the source code it is interpreting has already been nor‐
+malized and does not do any normalization on its own. If you plan to use Unicode
+characters in your JavaScript programs, you should ensure that your editor or some
+other tool performs Unicode normalization of your source code to prevent you from
+ending up with different but visually indistinguishable identifiers.</p>
+
+<h2>2.6 Optional Semicolons</h2>
+
+<p>Like many programming languages, JavaScript uses the semicolon (;) to separate
+statements (see Chapter 5) from one another. This is important for making the mean‐
+ing of your code clear: without a separator, the end of one statement might appear to
+be the beginning of the next, or vice versa. In JavaScript, you can usually omit the
+semicolon between two statements if those statements are written on separate lines.
+(You can also omit a semicolon at the end of a program or if the next token in the
+program is a closing curly brace: }.) Many JavaScript programmers (and the code in
+this book) use semicolons to explicitly mark the ends of statements, even where they
+are not required. Another style is to omit semicolons whenever possible, using them
+only in the few situations that require them. Whichever style you choose, there are a
+few details you should understand about optional semicolons in JavaScript.</p>
+
+<p>Consider the following code. Since the two statements appear on separate lines, the
+first semicolon could be omitted:</p>
+
+<pre>
+a = 3;
+b = 4;
+</pre>
+<p>Written as follows, however, the first semicolon is required:</p>
+
+<pre>a = 3; b = 4;</pre>
+
+<p>Note that JavaScript does not treat every line break as a semicolon: it usually treats
+line breaks as semicolons only if it can’t parse the code without adding an implicit
+semicolon. More formally (and with three exceptions described a bit later), JavaScript
+treats a line break as a semicolon if the next nonspace character cannot be interpreted
+as a continuation of the current statement. Consider the following code:</p>
+
+<pre>
+3=alet a
+console.log(a)
+JavaScript interprets this code like this:
+let a; a = 3; console.log(a);
+2.6 Optional Semicolons
+|
+19
+</pre>
+
+<p>JavaScript does treat the first line break as a semicolon because it cannot parse the
+code let a a without a semicolon. The second a could stand alone as the statement
+a;, but JavaScript does not treat the second line break as a semicolon because it can
+continue parsing the longer statement a = 3;.</p>
+
+<p>These statement termination rules lead to some surprising cases. This code looks like
+two separate statements separated with a newline:</p>
+
+<pre>
+let y = x + f
+(a+b).toString()
+</pre>
+
+<p>But the parentheses on the second line of code can be interpreted as a function invo‐
+cation of f from the first line, and JavaScript interprets the code like this:</p>
+
+<pre>let y = x + f(a+b).toString();</pre>
+
+<p>More likely than not, this is not the interpretation intended by the author of the code.
+In order to work as two separate statements, an explicit semicolon is required in this
+case.</p>
+
+<p>In general, if a statement begins with (, [, /, +, or -, there is a chance that it could be
+interpreted as a continuation of the statement before. Statements beginning with /, +,
+and - are quite rare in practice, but statements beginning with ( and [ are not
+uncommon at all, at least in some styles of JavaScript programming. Some program‐
+mers like to put a defensive semicolon at the beginning of any such statement so that
+it will continue to work correctly even if the statement before it is modified and a pre‐
+viously terminating semicolon removed:</p>
+
+<pre>
+let x = 0 // Semicolon omitted here
+;[x,x+1,x+2].forEach(console.log) // Defensive ; keeps this statement separate
+</pre>
+
+<p>There are three exceptions to the general rule that JavaScript interprets line breaks as
+semicolons when it cannot parse the second line as a continuation of the statement
+on the first line. The first exception involves the return, throw, yield, break, and
+continue statements (see Chapter 5). These statements often stand alone, but they are
+sometimes followed by an identifier or expression. If a line break appears after any of
+these words (before any other tokens), JavaScript will always interpret that line break
+as a semicolon. For example, if you write:</p>
+
+<pre>
+return
+true;
+JavaScript assumes you meant:
+return; true;
+However, you probably meant:
+return true;
+20
+|
+</pre>
+<h2>Chapter 2: Lexical Structure</h2>
+
+<p>This means that you must not insert a line break between return, break, or continue
+and the expression that follows the keyword. If you do insert a line break, your code
+is likely to fail in a nonobvious way that is difficult to debug.</p>
+
+<p>The second exception involves the ++ and −− operators (§4.8). These operators can be
+prefix operators that appear before an expression or postfix operators that appear
+after an expression. If you want to use either of these operators as postfix operators,
+they must appear on the same line as the expression they apply to. The third excep‐
+tion involves functions defined using concise “arrow” syntax: the => arrow itself must
+appear on the same line as the parameter list.</p>
+
+<h2>2.7 Summary</h2>
+
+<p>This chapter has shown how JavaScript programs are written at the lowest level. The next chapter 
+takes us one step higher and introduces the primitive types and values (numbers, strings, and so 
+on) that serve as the basic units of computation for JavaScript programs.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>CHAPTER 3 Types, Values, and Variables</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p>Computer programs work by manipulating values, such as the number 3.14 or the text “Hello World.” 
+The kinds of values that can be represented and manipulated in a programming language are known as 
+types, and one of the most fundamental characteristics of a programming language is the set of types 
+it supports. When a program needs to retain a value for future use, it assigns the value to (or 
+“stores” the value in) a variable. Variables have names, and they allow use of those names in our 
+programs to refer to values. The way that variables work is another fundamental characteristic of
+any programming language. This chapter explains types, values, and variables in JavaScript. It 
+begins with an overview and some definitions.</p>
+
+3.1 Overview and Definitions
+
+<p>JavaScript types can be divided into two categories: primitive types and object types.
+JavaScript’s primitive types include numbers, strings of text (known as strings), and
+Boolean truth values (known as booleans). A significant portion of this chapter is
+dedicated to a detailed explanation of the numeric (§3.2) and string (§3.3) types in
+JavaScript. Booleans are covered in §3.4.</p>
+
+<p>The special JavaScript values null and undefined are primitive values, but they are
+not numbers, strings, or booleans. Each value is typically considered to be the sole
+member of its own special type. §3.5 has more about null and undefined. ES6 adds a
+new special-purpose type, known as Symbol, that enables the definition of language
+extensions without harming backward compatibility. Symbols are covered briefly in
+§3.6.</p>
+
+<p>Any JavaScript value that is not a number, a string, a boolean, a symbol, null, or unde
+fined is an object. An object (that is, a member of the type object) is a collection of
+properties where each property has a name and a value (either a primitive value or
+another object). One very special object, the global object, is covered in §3.7, but more
+general and more detailed coverage of objects is in Chapter 6.</p>
+
+<p>An ordinary JavaScript object is an unordered collection of named values. The lan‐
+guage also defines a special kind of object, known as an array, that represents an
+ordered collection of numbered values. The JavaScript language includes special syn‐
+tax for working with arrays, and arrays have some special behavior that distinguishes
+them from ordinary objects. Arrays are the subject of Chapter 7.
+
+<p>In addition to basic objects and arrays, JavaScript defines a number of other useful
+object types. A Set object represents a set of values. A Map object represents a mapping 
+from keys to values. Various “typed array” types facilitate operations on arrays of
+bytes and other binary data. The RegExp type represents textual patterns and enables
+sophisticated matching, searching, and replacing operations on strings. The Date type
+represents dates and times and supports rudimentary date arithmetic. Error and its
+subtypes represent errors that can arise when executing JavaScript code. All of these
+types are covered in Chapter 11.</p>
+
+<p>JavaScript differs from more static languages in that functions and classes are not just
+part of the language syntax: they are themselves values that can be manipulated by
+JavaScript programs. Like any JavaScript value that is not a primitive value, functions
+and classes are a specialized kind of object. They are covered in detail in Chapters 8
+and 9.</p>
+
+The JavaScript interpreter performs automatic garbage collection for memory management. This means 
+that a JavaScript programmer generally does not need to worry about destruction or deallocation of 
+objects or other values. When a value is no longer reachable—when a program no longer has any way 
+to refer to it—the interpreter knows it can never be used again and automatically reclaims the memory 
+it was occupying. (JavaScript programmers do sometimes need to take care to ensure that values do not 
+inadvertently remain reachable—and therefore nonreclaimable—longer than necessary.)</p>
+
+<p>JavaScript supports an object-oriented programming style. Loosely, this means that
+rather than having globally defined functions to operate on values of various types,
+the types themselves define methods for working with values. To sort the elements of
+an array a, for example, we don’t pass a to a sort() function. Instead, we invoke the
+sort() method of a:</p>
+
+<pre>a.sort(); // The object-oriented version of sort(a).</pre>
+
+<p>Method definition is covered in Chapter 9. Technically, it is only JavaScript objects
+that have methods. But numbers, strings, boolean, and symbol values behave as if
+they have methods. In JavaScript, null and undefined are the only values that methods cannot be invoked on.</p>
+
+<p>This is the format for numbers of type double in Java, C++, and most modern programming languages.
+JavaScript’s object types are mutable and its primitive types are immutable. A value of a mutable type 
+can change: a JavaScript program can change the values of object properties and array elements. Numbers, 
+booleans, symbols, null, and undefined are immutable—it doesn’t even make sense to talk about changing 
+the value of a number, for example. Strings can be thought of as arrays of characters, and you might 
+expect them to be mutable. In JavaScript, however, strings are immutable: you can access the text at 
+any index of a string, but JavaScript provides no way to alter the text of an existing string. The 
+differences between mutable and immutable values are explored further in §3.8.</p>
+
+<p>JavaScript liberally converts values from one type to another. If a program expects a string, for 
+example, and you give it a number, it will automatically convert the number to a string for you. And 
+if you use a non-boolean value where a boolean is expected, JavaScript will convert accordingly. The 
+rules for value conversion are explained in §3.9. JavaScript’s liberal value conversion rules affect 
+its definition of equality, and the == equality operator performs type conversions as described in
+§3.9.1. (In practice, however, the == equality operator is deprecated in favor of the strict equality 
+operator ===, which does no type conversions. See §4.9.1 for more about both operators.)</p>
+
+<p>Constants and variables allow you to use names to refer to values in your programs. Constants are 
+declared with const and variables are declared with let (or with var in older JavaScript code). 
+JavaScript constants and variables are untyped: declarations do not specify what kind of values will 
+be assigned. Variable declaration and assignment are covered in §3.10.</p>
+
+<p>As you can see from this long introduction, this is a wide-ranging chapter that explains many 
+fundamental details about how data is represented and manipulated in JavaScript. We’ll begin by 
+diving right in to the details of JavaScript numbers and text.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>3.2 Numbers</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -1457,33 +1850,27 @@ explain ...</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2 id="ch17">Chapter 17. JavaScript Tools and Extensions</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-Congratulations on reaching the final chapter of this book. If you have read everything that comes 
+<p>Congratulations on reaching the final chapter of this book. If you have read everything that comes 
 before, you now have a detailed understanding of the JavaScript language and know how to use it in 
 Node and in web browsers. This chapter is a kind of graduation present: it introduces a handful of 
 important programming tools that many JavaScript programmers find useful, and also describes two 
 widely used extensions to the core JavaScript language. Whether or not you choose to use these 
 tools and extensions for your own projects, you are almost certain to see them used in other 
-projects, so it is important to at least know what they are.
+projects, so it is important to at least know what they are.</p>
 
-The tools and language extensions covered in this chapter are:
-
-    ESLint for finding potential bugs and style problems in your code.
-
-    Prettier for formatting your JavaScript code in a standardized way.
-
-    Jest as an all-in-one solution for writing JavaScript unit tests.
-
-    npm for managing and installing the software libraries that your program depends on.
-
-    Code-bundling tools—like webpack, Rollup, and Parcel—that convert your modules of JavaScript 
-	code into a single bundle for use on the web.
-
-    Babel for translating JavaScript code that uses brand-new language features (or that uses 
-	language extensions) into JavaScript code that can run in current web browsers.
-
-    The JSX language extension (used by the React framework) that allows you to describe user 
-	interfaces using JavaScript expressions that look like ...
-
+<p>The tools and language extensions covered in this chapter are:</p>
+<ul>
+  <li>ESLint for finding potential bugs and style problems in your code.</li>
+  <li>Prettier for formatting your JavaScript code in a standardized way.</li>
+  <li>Jest as an all-in-one solution for writing JavaScript unit tests.</li>
+  <li>npm for managing and installing the software libraries that your program depends on.</li>
+  <li>Code-bundling tools—like webpack, Rollup, and Parcel—that convert your modules of JavaScript 
+    code into a single bundle for use on the web.</li>
+  <li>Babel for translating JavaScript code that uses brand-new language features (or that uses 
+    language extensions) into JavaScript code that can run in current web browsers.</li>
+  <li>The JSX language extension (used by the React framework) that allows you to describe user 
+    interfaces using JavaScript expressions that look like ...</li>
+</ul>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>4.13 Miscellaneous Operators</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
