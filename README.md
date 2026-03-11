@@ -592,21 +592,84 @@ if declared with var outside of a class, for example, but not if declared inside
 with const.) The simplest course is to avoid using any of these words as identifiers,
 except for from, set, and target, which are safe to use and are already in common
 use.</p>
-
-<dl>
-  <dt>as const export get null target void</dt>
-  <dt>async continue extends if of this while</dt>
-  <dt>await debugger false import return throw with</dt>
-  <dt>break default finally in set true yield</dt>
-  <dt>case delete for instanceof static try</dt>
-  <dt>catch do from let super typeof</dt>
-  <dt>class else function new switch var</dt>
-</dl>
+<table>
+  <tr> 
+    <td>as</td>
+    <td>const</td>
+    <td>export</td>
+    <td>get</td>
+    <td>null</td>
+    <td>target</td>
+    <td>void</td>
+  </tr>
+  <tr> 
+    <td>async</td>
+    <td>continue</td>
+    <td>extends</td>
+    <td>if</td>
+    <td>of</td>
+    <td>this</td>
+    <td>while</td>
+  </tr>
+  <tr> 
+    <td>await</td>
+    <td>debugger</td>
+    <td>false</td>
+    <td>import</td>
+    <td>return</td>
+    <td>throw</td>
+    <td>with</td>
+  </tr>
+  <tr> 
+    <td>break</td>
+    <td>default</td>
+    <td>finally</td>
+    <td>in</td>
+    <td>set</td>
+    <td>true</td>
+    <td>yield</td>
+  </tr>
+  <tr> 
+    <td>case</td>
+    <td>delete</td>
+    <td>for</td>
+    <td>instanceof</td>
+    <td>static</td>
+    <td>try</td>
+  </tr>
+  <tr> 
+    <td>catch</td>
+    <td>do</td>
+    <td>from</td>
+    <td>let</td>
+    <td>super</td>
+    <td>typeof</td>
+  </tr>
+  <tr> 
+    <td>class</td>
+    <td>else</td>
+    <td>function</td>
+    <td>new</td>
+    <td>switch</td>
+    <td>var</td>
+  </tr>
+</table>
 
 <p>JavaScript also reserves or restricts the use of certain keywords that are not currently
 used by the language but that might be used in future versions:
-enum implements interface package private protected public
-For historical reasons, arguments and eval are not allowed as identifiers in certain
+<table>
+  <tr> 
+    <td>enum</td>
+    <td>implements</td>
+    <td>interface</td>
+    <td>package</td>
+    <td>private</td>
+    <td>protected</td>
+    <td>public</td>
+  </tr>
+</table>
+
+<p>For historical reasons, arguments and eval are not allowed as identifiers in certain
 circumstances and are best avoided entirely.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>2.5 Unicode</h3>
