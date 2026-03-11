@@ -1506,7 +1506,7 @@ let b = []; // A distinct array we'll copy into
 for(let i = 0; i < a.length; i++) { // For each index of a[]
 } b[i] = a[i]; // Copy an element of a into b
 let c = Array.from(b); // In ES6, copy arrays with Array.from()
-<pre>
+</pre>
 
 <p>Similarly, if we want to compare two distinct objects or arrays, we must compare their
 properties or elements. This code defines a function to compare two arrays:</p>
