@@ -1,10 +1,13 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-JS-Definitive-JavaScript
+<h1 id="JS-Definitive">JS-Definitive-JavaScript</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>4.13 Miscellaneous Operators</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>JavaScript supports a number of other miscellaneous operators, described in the following sections.</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.1 The Conditional Operator (?:)</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The conditional operator is the only ternary operator (three operands) in JavaScript
 and is sometimes actually called the ternary operator. This operator is sometimes
 written ?:, although it does not appear quite that way in code. Because this operator
@@ -32,7 +35,9 @@ if (username) {
   greeting += "there";
 }
 </pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.2 First-Defined (??)</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The first-defined operator ?? evaluates to its first defined operand: if its left operand
 is not null and not undefined, it returns that value. Otherwise, it returns the value of
 the right operand. Like the && and || operators, ?? is short-circuiting: it only evalu‐
@@ -86,11 +91,15 @@ current or beta versions of all major browsers. This operator is formally called
 “nullish coalescing” operator, but I avoid that term because this operator selects one
 of its operands but does not “coalesce” them in any way that I can see.</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.3 The typeof Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>typeof is a unary operator that is placed before its single operand, which can be of
 any type. Its value is a string that specifies the type of the operand. Table 4-3 specifies
 the value of the typeof operator for any JavaScript value.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h4>Table 4-3. Values returned by the typeof operator</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <table>
 <table border="1">
@@ -152,7 +161,9 @@ distinguish one class of object from another, you must use other techniques, suc
 the instanceof operator (see §4.9.4), the class attribute (see §14.4.3), or the con
 structor property (see §9.2.2 and §14.3).</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.4 The delete Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p><b>delete</b> is a unary operator that attempts to delete the object property or array element specified 
 as its operand. Like the assignment, increment, and decrement operators, delete is typically used 
 for its property deletion side effect and not for the value it returns. Some examples:</p>
@@ -197,7 +208,9 @@ delete o;
 delete Object.prototype;
 </pre>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.5 The await Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p><b>await</b> is a way to make asynchronous programming more natural in JavaScript. You will need 
 to read Chapter 13 to understand this operator. Briefly, however, await expects a Promise object 
 (representing an asynchronous computation) as its sole operand, and it makes your program behave 
@@ -207,7 +220,9 @@ same time). The value of the await operator is the fulfillment value of the Prom
 Importantly, await is only legal within functions that have been declared asynchronous with the 
 async keyword. Again, see Chapter 13 for full details.</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.6 The void Operator</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p><b>void</b> is a unary operator that appears before its single operand, which may be of any
 type. This operator is unusual and infrequently used; it evaluates its operand, then
 discards the value and returns undefined. Since the operand value is discarded, using
@@ -226,7 +241,9 @@ increment() // => undefined
 counter // => 1
 </pre>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>4.13.7 The comma Operator (,)</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The comma operator is a binary operator whose operands may be of any type. It evalu‐
 ates its left operand, evaluates its right operand, and then returns the value of the
 right operand. Thus, the following line:</p>
@@ -247,6 +264,7 @@ for(let i=0,j=10; i < j; i++,j--) {
 </pre>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>Chapter 5 Statements</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Chapter 4 described expressions as JavaScript phrases. By that analogy, statements are
 JavaScript sentences or commands. Just as English sentences are terminated and sepa‐
 rated from one another with periods, JavaScript statements are terminated with semi‐
@@ -262,14 +280,20 @@ default, the JavaScript interpreter executes these statements one after another 
 order they are written. Another way to “make something happen” is to alter this
 default order of execution, and JavaScript has a number of statements or control struc‐
 tures that do just this:</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h4>Conditionals</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Statements like if and switch that make the JavaScript interpreter execute or
 skip other statements depending on the value of an expression</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h4>Loops</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Statements like while and for that execute other statements repetitively</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h4>Jumps</h4>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Statements like break, return, and throw that cause the interpreter to jump to
 another part of the program</p>
 
@@ -278,7 +302,9 @@ their syntax. Table 5-1, at the end of the chapter, summarizes the syntax. A Jav
 program is simply a sequence of statements, separated from one another with
 semicolons, so once you are familiar with the statements of JavaScript, you can begin
 writing JavaScript programs.
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 5.1 Expression Statements
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 The simplest kinds of statements in JavaScript are expressions that have side effects.
 This sort of statement was shown in Chapter 4. Assignment statements are one major
 category of expression statements. For example:
@@ -304,7 +330,9 @@ Math.cos(x);
 But you might well compute the value and assign it to a variable for future use:
 cx = Math.cos(x);
 Note that each line of code in each of these examples is terminated with a semicolon.
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 5.2 Compound and Empty Statements
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Just as the comma operator (§4.13.7) combines multiple expressions into a single
 expression, a statement block combines multiple statements into a single compound
 statement. A statement block is simply a sequence of statements enclosed within curly
@@ -346,7 +374,9 @@ o = null; // and this line is always executed.
 When you intentionally use the empty statement, it is a good idea to comment your
 code in a way that makes it clear that you are doing it on purpose. For example:
 for(let i = 0; i < a.length; a[i++] = 0) /* empty */ ;
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 5.3 Conditionals
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 Conditional statements execute or skip other statements depending on the value of a
 specified expression. These statements are the decision points of your code, and they
 are also sometimes known as “branches.” If you imagine a JavaScript interpreter fol‐
@@ -355,7 +385,9 @@ code branches into two or more paths and the interpreter must choose which path 
 follow.
 The following subsections explain JavaScript’s basic conditional, the if/else state‐
 ment, and also cover switch, a more complicated, multiway branch statement.
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 5.3.1 if
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 The if statement is the fundamental control statement that allows JavaScript to make
 decisions, or, more precisely, to execute statements conditionally. This statement has
 two forms. The first is:
@@ -442,7 +474,9 @@ even when the body consists of only a single statement. Doing so consistently ca
 prevent the sort of problem just shown, and I advise you to adopt this practice. In this
 printed book, I place a premium on keeping example code vertically compact, and I
 do not always follow my own advice on this matter.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>5.3.2 else if</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The if/else statement evaluates an expression and executes one of two pieces of
 code, depending on the outcome. But what about when you need to execute one of
 many pieces of code? One way to do this is with an else if statement. else if is not
@@ -480,7 +514,9 @@ else {
   }
 }
 </pre>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>5.3.3 switch</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>An if statement causes a branch in the flow of a program’s execution, and you can
 use the else if idiom to perform a multiway branch. This is not the best solution,
 however, when all of the branches depend on the value of the same expression. In this
@@ -547,9 +583,9 @@ function convert(x) {
   }
 }
 </pre>
-
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>5.4 Loops</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>To understand conditional statements, we imagined the JavaScript interpreter follow‐
 ing a branching path through your source code. The looping statements are those that
 bend that path back upon itself to repeat portions of your code. JavaScript has five
@@ -558,7 +594,9 @@ for/in. The following subsections explain each in turn. One common use for loops
 to iterate over the elements of an array. §7.6 discusses this kind of loop in detail and
 covers special looping methods defined by the Array class.</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>5.4.1 while</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Just as the if statement is JavaScript’s basic conditional, the while statement is JavaS‐
 cript’s basic loop. It has the following syntax:</p>
 
@@ -600,7 +638,9 @@ have a counter variable like count. The variable names i, j, and k are commonly 
 as loop counters, though you should use more descriptive names if it makes your
 code easier to understand.</p>
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>5.4.2 do/while</h3>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The <b>do/while</b> loop is like a while loop, except that the loop expression is tested at the
 bottom of the loop rather than at the top. This means that the body of the loop is
 always executed at least once. The syntax is:</p>
@@ -657,5 +697,3 @@ var			Declare and initialize one or more variables (old syntax)
 while		A basic loop construct
 with		Extend the scope chain (deprecated and forbidden in strict mode)
 yield		Provide a value to be iterated; only used in generator functions
-
-
